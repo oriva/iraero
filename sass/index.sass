@@ -1,0 +1,103 @@
+@import "fonts"
+body
+  height: 100vh
+  width: 100vw
+  overflow: hidden
+  font-family: 'Proxima Nova', serif
+  color: #FFF
+  font-size: 16px
+  --left-padding: 130px
+  --bottom: 60px
+
+.panorama
+  position: absolute
+  z-index: 5
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  background-color: #000
+  transition: .8s ease-in-out opacity
+  transition-delay: .2s
+  opacity: 1
+  pointer-events: none
+  &.hide
+    opacity: 0
+
+.ff-cond
+  font-family: 'Proxima Nova Cond', 'Proxima Nova', serif
+
+.header
+  position: absolute
+  z-index: 10
+  top: 40px
+  left: var(--left-padding)
+  img
+    width: 130px
+
+.main-content
+  position: relative
+  z-index: 2
+  height: 100%
+  width: 100%
+  top: 0
+  left: 0
+  &__img
+    top: 0
+    left: 0
+    height: 100%
+    width: 100%
+    object-fit: cover
+    object-position: center
+    &.hide
+      z-index: 1
+      //opacity: 0
+  &__video
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    height: 100%
+    width: 100%
+    object-fit: cover
+    object-position: center
+    source
+      height: 100%
+      width: 100%
+    &.hide
+      opacity: 0
+  &__img
+    position: relative
+    z-index: 3
+  &__video
+    position: absolute
+    z-index: 2
+
+@media (max-width: 1979.99px)
+  .main-content
+    &__img
+      &:nth-child(1)
+        display: block
+      &:nth-child(2)
+        display: none
+    video source
+      &:nth-child(1)
+        display: block
+      &:nth-child(2)
+        display: none
+
+@media (min-width: 1980px)
+  .main-content
+    &__img
+      &:nth-child(1)
+        display: none
+      &:nth-child(2)
+        display: block
+    video source
+      &:nth-child(1)
+        display: none
+      &:nth-child(2)
+        display: block
+
+@import "sharing"
+@import "footer"

@@ -1,0 +1,103 @@
+body
+  &.hide
+    .footer, .sharing
+      opacity: 0
+    .sharing
+      right: -30px
+    .fn-tb
+      transform: translateY(50px)
+    .footer-dots
+      transform: translateY(50px)
+    .footer__dev-link
+      transform: translateX(20px)
+
+.footer
+  position: absolute
+  z-index: 3
+  left: 0
+  right: 0
+  bottom: 0
+  padding: 120px var(--left-padding) var(--bottom)
+  transition: .3s
+  &::after
+    content: ''
+    position: absolute
+    left: 0
+    right: 0
+    top: 0
+    bottom: 0
+    background: linear-gradient(360deg, #000000 -102.02%, rgba(0, 0, 0, 0) 84.78%)
+    opacity: 0
+    transition: .3s
+    z-index: 1
+  &.not-first
+    &::after
+      opacity: 1
+  &__dev
+    position: absolute
+    right: calc(var(--left-padding) * -1 + 56px)
+    bottom: 0
+    max-width: 100%
+    a
+      position: relative
+      display: block
+      writing-mode: sideways-lr
+      text-decoration: none
+      &:hover
+        text-decoration: underline
+  &__content
+    position: relative
+    z-index: 2
+  &__dev-link
+    display: block
+    color: #fff
+    transition: .3s
+    & > *
+      display: block
+      &:nth-child(1)
+        font-size: 1rem
+        font-weight: 300
+      &:nth-child(2)
+        font-size: 1.5rem
+        letter-spacing: 0.25rem
+
+.fn-tb
+  position: absolute
+  left: 0
+  bottom: -10px
+  transition: .3s .05s
+  & > *
+    display: block
+  &__little
+    font-size: 1.5rem
+    font-weight: 300
+  &__big
+    font-size: 2.5rem
+    text-transform: uppercase
+
+.footer-dots
+  display: flex
+  flex-wrap: wrap
+  list-style: none
+  justify-content: center
+  transition: .3s
+  & > li
+    flex: none
+    padding-left: 40px
+    a
+      display: block
+      box-sizing: border-box
+      width: 7px
+      height: 7px
+      border-radius: 50%
+      background: #FFF
+      opacity: .5
+      text-indent: 100%
+      overflow: hidden
+      white-space: nowrap
+      transition: .2s ease-in-out
+      &:hover
+        transform: scale(1.2)
+      &.active
+        opacity: 1
+        transform: scale(1.5)
