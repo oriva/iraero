@@ -138,14 +138,12 @@ const panorama = (() => {
     const showAnimation = number=>{
         makeVideo.change(parseInt(number));
         makeImg.change(parseInt(number));
+        text.change(parseInt(number));
     };
     (()=>{imageBlock[1].addEventListener("load", ()=>{
         setTimeout(()=>{
             if(listenImageChange) {
-                disabledEvents = false;
-                dots.visibleToggle();
                 panorama.hide();
-                listenImageChange = false;
             }
         },5);
 
@@ -157,13 +155,15 @@ const panorama = (() => {
             }
             if(!pano.classList.contains('hide')) {
                 showAnimation(toForListener);
-                listenImageChange = true;
             } else {
-                listenImageChange = false;
-                setTimeout(panorama.show(),400);
+                dots.visibleToggle();
+                if(listenImageChange)
+                    setTimeout(panorama.show(),400);
+                disabledEvents = false;
             }
         },
         show: number => {
+            listenImageChange = true;
             toForListener = number;
             setTimeout(() => {
                 pano.classList.remove('hide');
@@ -172,11 +172,28 @@ const panorama = (() => {
         },
         hide: () => {
             pano.classList.add('hide');
+            listenImageChange = false;
             return true;
         }
     }
 })();
 
+const text = (() => {
+    const textArea = [document.querySelector('.fn-tb__little'), document.querySelector('.fn-tb__big')];
+    const textInfo = [
+        ['Новый стандарт безопасности', 'Sukhoi Superjet 100'],
+        ['Новый стандарт безопасности', 'Единственный в своем роде'],
+        ['Новый стандарт безопасности', 'Непревзойденные<br> летные характеристики'],
+        ['Интерьер самолета', 'Комфорт и безопасность'],
+        ['Забронировать билет', 'Начните летать<br>вместе с нами']
+    ];
+    return {
+        change: number=>{
+            textArea[0].innerHTML = textInfo[parseInt(number)][0];
+            textArea[1].innerHTML = textInfo[parseInt(number)][1];
+        }
+    }
+})();
 
 // Отличается ли кликнутая кнопка от активной?
 const canChange = to => {
@@ -200,12 +217,12 @@ const startChange = (clickBut) => {
 
 // Дисейблим возможность эвентов, меняем дотс
 const startAnimation = to => {
-    disabledEvents = true;
     changeDots(to);
 };
 
 // меняем навигационные точки
 const changeDots = target => {
+    disabledEvents = true;
     document.querySelector('.footer-dots .active').classList.remove('active');
     target.classList.add('active');
     dots.visibleToggle();
@@ -245,3 +262,43 @@ const goVideo = clickBut => {
         panorama.show(clickBut.dataset.to||toForListener);
     }
 };
+
+
+
+
+//scroll
+const onWheel =(e=>{
+    e = e || window.event;
+    let delta = e.deltaY || e.detail || e.wheelDelta;
+    if (!disabledEvents) {
+        let batya = document.querySelector('.footer-dots .active').parentNode;
+        if(delta>0) {
+            if(batya.previousElementSibling)
+                changeDots(batya.previousElementSibling.querySelector('a'));
+        } else if (delta<0) {
+            if(batya.nextElementSibling)
+                changeDots(batya.nextElementSibling.querySelector('a'));
+        }
+    }
+});
+
+
+let elem = document;
+if (elem.addEventListener) {
+    if ('onwheel' in document) {
+        // IE9+, FF17+, Ch31+
+        elem.addEventListener("wheel", onWheel);
+        console.log('onwheel');
+    }
+    else if ('onmousewheel' in document) {
+        // устаревший вариант события
+        elem.addEventListener("mousewheel", onWheel);
+        console.log('onmousewheel');
+    } else {
+        // Firefox < 17
+        elem.addEventListener("MozMousePixelScroll", onWheel);
+        console.log('MozMousePixelScroll');
+    }
+} else { // IE8-
+    elem.attachEvent("onmousewheel", onWheel);
+}
