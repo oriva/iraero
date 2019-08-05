@@ -69,6 +69,7 @@ const getLink = (type, number) => {
                 link = 'tr4.mp4';
                 break;
             case 5:
+                link = 'tr1.mp4';
                 break;
         }
     }
@@ -189,8 +190,8 @@ const text = (() => {
     ];
     return {
         change: number=>{
-            textArea[0].innerHTML = textInfo[parseInt(number)][0];
-            textArea[1].innerHTML = textInfo[parseInt(number)][1];
+            textArea[0].innerHTML = textInfo[parseInt(number)-1][0];
+            textArea[1].innerHTML = textInfo[parseInt(number)-1][1];
         }
     }
 })();
@@ -288,7 +289,6 @@ if (elem.addEventListener) {
     if ('onwheel' in document) {
         // IE9+, FF17+, Ch31+
         elem.addEventListener("wheel", onWheel);
-        console.log('onwheel');
     }
     else if ('onmousewheel' in document) {
         // устаревший вариант события
