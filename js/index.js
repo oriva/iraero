@@ -271,7 +271,7 @@ const goVideo = clickBut => {
 const onWheel =(e=>{
     e = e || window.event;
     let delta = e.deltaY || e.detail || e.wheelDelta;
-    if (!disabledEvents) {
+    if (!disabledEvents && document.querySelector('.popup').classList.contains('hide')) {
         let batya = document.querySelector('.footer-dots .active').parentNode;
         if(delta>0) {
             if(batya.previousElementSibling)
