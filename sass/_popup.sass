@@ -3,17 +3,18 @@
   width: 100vw
   height: 100vh
   z-index: 10
+  transition: .3s
   &__cursor
     position: absolute
     top: 0
-    left: 0
+    left: 100%
     display: block
-    width: 30px
-    height: 30px
+    width: 50px
+    height: 50px
     background-image: url('../img/popup/cursor.svg')
     background-size: cover
     opacity: 1
-    transition: .05s
+    transition: .1s
     &.hide
       opacity: 0
   &__bg
@@ -21,6 +22,7 @@
     width: 100%
     height: 100%
     background-color: rgba(0, 0, 0, 0.45)
+    cursor: none
   &__block-content
     position: absolute
     top: 0
@@ -29,8 +31,13 @@
     height: 100%
     overflow-x: hidden
     overflow-y: auto
+    transition: .4s ease-in-out
   &.hide
-    right: -100%
+    transition-delay: .4s
+    opacity: 0
+    pointer-events: none
+    .popup__block-content
+      right: -100%
 
 .popup-content
   position: relative
@@ -67,3 +74,5 @@
       height: 3px
       width: 9rem
       background-color: #59a9e3
+
+@import "dots"
