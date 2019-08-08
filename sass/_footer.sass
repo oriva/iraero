@@ -17,7 +17,7 @@ body
   left: 0
   right: 0
   bottom: 0
-  padding: 170px var(--left-padding) var(--bottom)
+  padding: 0 var(--left-padding) var(--bottom)
   transition: .3s
   &::after
     content: ''
@@ -31,6 +31,7 @@ body
     transition: .3s
     z-index: 1
   &.not-first
+    padding-top: 170px
     &::after
       opacity: 1
   &__dev

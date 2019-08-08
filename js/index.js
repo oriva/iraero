@@ -6,7 +6,7 @@ let forListenerVideo = '';
 const imageBlock = document.querySelectorAll('.main-content__img');
 const videoBlock = document.querySelector('.main-content__video');
 
-document.querySelector('.panorama').addEventListener('transitionend', ()=>{
+document.querySelector('.panorama').addEventListener('transitionend', () => {
     panorama.monitoring();
 });
 
@@ -21,12 +21,14 @@ document.addEventListener('click', e => {
         }
     }
 });
+
 document.addEventListener('DOMContentLoaded', () => {
     if (window.innerWidth < 1980) {
         videoBlock.src = 'video/fullHD/' + getLink('video', 1);
     } else {
         videoBlock.src = 'video/4k/' + getLink('video', 1);
     }
+    popupDots.showDots();
 });
 
 
@@ -92,6 +94,7 @@ const makeImg = (() => {
         change: (number) => {
             imageBlock[0].setAttribute('src', 'img/fullHD/' + getLink('image', parseInt(number)));
             imageBlock[1].setAttribute('src', 'img/4k/' + getLink('image', parseInt(number)));
+
             return true;
         }
     }
@@ -101,7 +104,9 @@ const makeVideo = (() => {
     const source = [videoBlock.querySelectorAll('source')[0], videoBlock.querySelectorAll('source')[1]];
     return {
         play: () => {
-            videoBlock.play();
+            setTimeout(() => {
+                videoBlock.play();
+            }, 700);
             disabledEvents = false;
         },
         change: number => {
@@ -116,10 +121,10 @@ const makeVideo = (() => {
     }
 })();
 
-const dots = (()=>{
+const dots = (() => {
     return {
-        visibleToggle: ()=>{
-            if(document.querySelector('body').classList.contains('hide')) {
+        visibleToggle: () => {
+            if (document.querySelector('body').classList.contains('hide')) {
                 if (document.querySelector('.footer-dots .active').dataset.to !== '1') {
                     document.querySelector('.footer').classList.add('not-first');
                 } else {
@@ -136,30 +141,33 @@ const dots = (()=>{
 const panorama = (() => {
     const pano = document.querySelector('.panorama');
     let listenImageChange = false;
-    const showAnimation = number=>{
+    const showAnimation = number => {
         makeVideo.change(parseInt(number));
         makeImg.change(parseInt(number));
         text.change(parseInt(number));
+        popupDots.showDots();
     };
-    (()=>{imageBlock[1].addEventListener("load", ()=>{
-        setTimeout(()=>{
-            if(listenImageChange) {
-                panorama.hide();
-            }
-        },5);
+    (() => {
+        imageBlock[1].addEventListener("load", () => {
+            setTimeout(() => {
+                if (listenImageChange) {
+                    panorama.hide();
+                }
+            }, 5);
 
-    })})();
+        })
+    })();
     return {
-        monitoring: ()=>{
-            if(!disabledEvents) {
+        monitoring: () => {
+            if (!disabledEvents) {
                 return false;
             }
-            if(!pano.classList.contains('hide')) {
+            if (!pano.classList.contains('hide')) {
                 showAnimation(toForListener);
             } else {
                 dots.visibleToggle();
-                if(listenImageChange)
-                    setTimeout(panorama.show(),400);
+                if (listenImageChange)
+                    setTimeout(panorama.show(), 400);
                 disabledEvents = false;
             }
         },
@@ -189,9 +197,9 @@ const text = (() => {
         ['Забронировать билет', 'Начните летать<br>вместе с нами']
     ];
     return {
-        change: number=>{
-            textArea[0].innerHTML = textInfo[parseInt(number)-1][0];
-            textArea[1].innerHTML = textInfo[parseInt(number)-1][1];
+        change: number => {
+            textArea[0].innerHTML = textInfo[parseInt(number) - 1][0];
+            textArea[1].innerHTML = textInfo[parseInt(number) - 1][1];
         }
     }
 })();
@@ -229,6 +237,7 @@ const changeDots = target => {
     dots.visibleToggle();
     goVideo(target);
     from = parseInt(target.dataset.to);
+    popupDots.hideDots();
 };
 
 
@@ -244,6 +253,7 @@ const listenerVideoPlay = clickBut => {
         document.querySelector('.footer').classList.remove('not-first');
     }
     dots.visibleToggle();
+    popupDots.showDots();
     (function (clickBut) {
         setTimeout(function () {
             videoSrcChange(clickBut);
@@ -256,28 +266,29 @@ const goVideo = clickBut => {
     if (canChange(parseInt(clickBut.dataset.to)) === 1) {
         makeImg.hide();
         makeImg.change(clickBut.dataset.to);
-        videoBlock.play();
+        setTimeout(() => {
+            videoBlock.play();
+            text.change(parseInt(clickBut.dataset.to));
+        }, 700);
         forListenerVideo = clickBut;
     } else {
         toForListener = clickBut.dataset.to;
-        panorama.show(clickBut.dataset.to||toForListener);
+        panorama.show(clickBut.dataset.to || toForListener);
     }
 };
 
 
-
-
 //scroll
-const onWheel =(e=>{
+const onWheel = (e => {
     e = e || window.event;
     let delta = e.deltaY || e.detail || e.wheelDelta;
     if (!disabledEvents && document.querySelector('.popup').classList.contains('hide')) {
         let batya = document.querySelector('.footer-dots .active').parentNode;
-        if(delta>0) {
-            if(batya.previousElementSibling)
+        if (delta > 0) {
+            if (batya.previousElementSibling)
                 changeDots(batya.previousElementSibling.querySelector('a'));
-        } else if (delta<0) {
-            if(batya.nextElementSibling)
+        } else if (delta < 0) {
+            if (batya.nextElementSibling)
                 changeDots(batya.nextElementSibling.querySelector('a'));
         }
     }
@@ -293,11 +304,9 @@ if (elem.addEventListener) {
     else if ('onmousewheel' in document) {
         // устаревший вариант события
         elem.addEventListener("mousewheel", onWheel);
-        console.log('onmousewheel');
     } else {
         // Firefox < 17
         elem.addEventListener("MozMousePixelScroll", onWheel);
-        console.log('MozMousePixelScroll');
     }
 } else { // IE8-
     elem.attachEvent("onmousewheel", onWheel);
