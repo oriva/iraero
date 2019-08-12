@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3ae4d242-ba8a-495e-af7c-519e5c584cea" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/popup.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/popup.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sass/_footer.sass" beforeDir="false" afterPath="$PROJECT_DIR$/sass/_footer.sass" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sass/_dots.sass" beforeDir="false" afterPath="$PROJECT_DIR$/sass/_dots.sass" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -36,7 +33,7 @@
           <entry key="css" value="1" />
           <entry key="js" value="5" />
           <entry key="php" value="1" />
-          <entry key="sass" value="21" />
+          <entry key="sass" value="22" />
           <entry key="ts" value="3" />
         </counts>
       </usages-collector>
@@ -45,24 +42,24 @@
           <entry key="CSS" value="1" />
           <entry key="JavaScript" value="5" />
           <entry key="PHP" value="1" />
-          <entry key="Sass" value="21" />
+          <entry key="Sass" value="22" />
           <entry key="TypeScript" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="html" value="930" />
-          <entry key="js" value="5930" />
+          <entry key="js" value="6364" />
           <entry key="php" value="5" />
-          <entry key="sass" value="2774" />
+          <entry key="sass" value="2779" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="930" />
-          <entry key="JavaScript" value="5930" />
+          <entry key="JavaScript" value="6364" />
           <entry key="PHP" value="5" />
-          <entry key="Sass" value="2774" />
+          <entry key="Sass" value="2779" />
         </counts>
       </usages-collector>
     </session>
@@ -84,26 +81,15 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/popup.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="328">
-              <caret line="43" column="26" selection-start-line="43" selection-start-column="26" selection-end-line="43" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sass/index.sass">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2047">
-              <caret line="89" column="26" lean-forward="true" selection-start-line="89" selection-start-column="26" selection-end-line="89" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sass/_footer.sass">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="287">
-              <caret line="46" column="14" selection-start-line="46" selection-start-column="14" selection-end-line="46" selection-end-column="14" />
+            <state relative-caret-position="312">
+              <caret line="93" column="26" selection-start-line="93" selection-start-column="26" selection-end-line="93" selection-end-column="26" />
+              <folding>
+                <element signature="e#188#539#0" />
+                <element signature="e#2622#2810#0" />
+                <element signature="e#2856#2894#0" />
+                <element signature="e#2941#3067#0" />
+                <element signature="e#3116#3265#0" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -111,8 +97,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="314">
-              <caret line="123" column="10" selection-start-line="123" selection-start-column="10" selection-end-line="123" selection-end-column="10" />
+            <state relative-caret-position="69">
+              <caret line="3" column="18" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -121,7 +107,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>click</find>
       <find>toggle</find>
       <find>visibleToggle</find>
       <find>disabledEvents</find>
@@ -151,6 +136,7 @@
       <find>not-first</find>
       <find>body</find>
       <find>dots_</find>
+      <find>mouse</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -165,11 +151,11 @@
         <option value="$PROJECT_DIR$/sass/_sharing.sass" />
         <option value="$PROJECT_DIR$/js/textModule.js" />
         <option value="$PROJECT_DIR$/sass/_popup.sass" />
-        <option value="$PROJECT_DIR$/sass/_dots.sass" />
         <option value="$PROJECT_DIR$/sass/index.sass" />
         <option value="$PROJECT_DIR$/js/index.js" />
         <option value="$PROJECT_DIR$/sass/_footer.sass" />
         <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/sass/_dots.sass" />
         <option value="$PROJECT_DIR$/js/popup.js" />
       </list>
     </option>
@@ -279,12 +265,12 @@
       <workItem from="1565236959083" duration="7494000" />
       <workItem from="1565252724269" duration="1999000" />
       <workItem from="1565316419525" duration="5808000" />
-      <workItem from="1565576129348" duration="1412000" />
+      <workItem from="1565576129348" duration="5395000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="85363000" />
+    <option name="totallyTimeSpent" value="89346000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
@@ -381,24 +367,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sass/_dots.sass">
+    <entry file="file://$PROJECT_DIR$/sass/_footer.sass">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1104">
-          <caret line="48" column="27" selection-start-line="48" selection-start-column="27" selection-end-line="48" selection-end-column="27" />
+        <state relative-caret-position="287">
+          <caret line="46" column="14" selection-start-line="46" selection-start-column="14" selection-end-line="46" selection-end-column="14" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sass/index.sass">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2047">
+        <state relative-caret-position="383">
           <caret line="89" column="26" lean-forward="true" selection-start-line="89" selection-start-column="26" selection-end-line="89" selection-end-column="26" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sass/_footer.sass">
+    <entry file="file://$PROJECT_DIR$/sass/_dots.sass">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
-          <caret line="46" column="14" selection-start-line="46" selection-start-column="14" selection-end-line="46" selection-end-column="14" />
+        <state relative-caret-position="475">
+          <caret line="86" column="34" selection-start-line="86" selection-start-column="34" selection-end-line="86" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="3" column="18" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="18" />
         </state>
       </provider>
     </entry>
@@ -409,17 +402,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="314">
-          <caret line="123" column="10" selection-start-line="123" selection-start-column="10" selection-end-line="123" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/popup.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="328">
-          <caret line="43" column="26" selection-start-line="43" selection-start-column="26" selection-end-line="43" selection-end-column="26" />
+        <state relative-caret-position="312">
+          <caret line="93" column="26" selection-start-line="93" selection-start-column="26" selection-end-line="93" selection-end-column="26" />
+          <folding>
+            <element signature="e#188#539#0" />
+            <element signature="e#2622#2810#0" />
+            <element signature="e#2856#2894#0" />
+            <element signature="e#2941#3067#0" />
+            <element signature="e#3116#3265#0" />
+          </folding>
         </state>
       </provider>
     </entry>
