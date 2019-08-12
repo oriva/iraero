@@ -3,7 +3,25 @@ const popupBg = document.querySelector('.popup__bg');
 const curItem = document.querySelector('.popup__cursor');
 
 
+const popupWindows = (()=>{
+    const togglePopup = action=>{
+        if(action==='show')
+            popup.classList.remove('hide');
+        else
+            popup.classList.add('hide');
+    };
+    return {
+        show: ()=>{
+            togglePopup('show');
+        },
+        hide: ()=>{
+            togglePopup('hide');
+        },
+        change: ()=>{
 
+        },
+    }
+})();
 
 const popupDots = (() => {
     const dotsContainer = document.querySelector('.dots__container');
@@ -15,7 +33,17 @@ const popupDots = (() => {
         duru.style.left = leftTop[0] + '%';
         duru.style.top = leftTop[1] + '%';
         duru.dataset.id = leftTop[2];
-        duru.innerHTML = '<div class="dots__item"><div class="dots__item-circle"></div></div>';
+        duru.dataset.relativeInput = 'true';
+        duru.innerHTML = '<div class="dots__item" data-depth="1"><div class="dots__item-circle"></div></div>';
+        new Parallax(duru, {
+            relativeInput: true,
+            pointerEvents: true,
+            hoverOnly: true,
+            invertX: false,
+            invertY: false,
+            scalarX: 50.0,
+            scalarY: 50.0
+        });
         return duru;
     };
     const dotElemRemove = ()=>{
@@ -69,10 +97,10 @@ popupDots.createDots(from);
 document.addEventListener('click', (e) => {
     let event = e.target;
     if (event.closest('.popup__bg')) {
-        popup.classList.add('hide');
+        popupWindows.hide();
     }
     if (event.closest('.dots__item-container')) {
-        popup.classList.remove('hide');
+        popupWindows.show();
     }
 });
 popupBg.addEventListener('mouseout', () => {

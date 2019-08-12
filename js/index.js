@@ -130,6 +130,11 @@ const dots = (() => {
                 } else {
                     document.querySelector('.footer').classList.remove('not-first');
                 }
+                if (document.querySelector('.footer-dots .active').dataset.to === '5') {
+                    document.querySelector('.footer').classList.add('last');
+                } else {
+                    document.querySelector('.footer').classList.remove('last');
+                }
             }
             setTimeout(() => {
                 document.querySelector('body').classList.toggle('hide');
