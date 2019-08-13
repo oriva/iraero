@@ -3,7 +3,33 @@ const popupBg = document.querySelector('.popup__bg');
 const curItem = document.querySelector('.popup__cursor');
 
 
-
+const popupContent = (number) => {
+    let content = '';
+    switch (number) {
+        case 1:
+            content = '<img src="img/popup/1.jpg" alt="" class="popup-content__img-100">\n' +
+                '                <div class="popup-content__padding-v">\n' +
+                '                    <span class="popup-content__title">Шасси и тормозная система</span>\n' +
+                '                    <p>На всех самолётах семейства RRJ используется убирающиеся шасси, с передней управляемой опорой и тормозными основными опорами.\n' +
+                '                        <br><br>Шасси фирмы Safran. Тормозная система фирмы Goodrich.\n' +
+                '                        <br>Шасси обеспечивает устойчивое положение самолёта на земле при стоянке и буксировке, маневрирование при рулении, выдерживание направления движения на разбеге и пробеге, поглощение кинетической энергии самолёта при послепосадочном пробеге и при прерванном взлёте, удерживание на месте при работающих двигателях, стояночное торможение.\n' +
+                '                        <br><br>Шасси самолёта, убирающееся в полёте, выполнено по трёхопорной схеме с управляемыми колёсами передней опоры шасси. Каждая (левая и правая) основная опора шасси имеет два тормозных колеса. Передняя опора шасси имеет два нетормозных колеса. Колёса основных опор снабжены дисковыми гидравлическими тормозами.\n' +
+                '                        <br><br>На колёсах всех опор установлены бескамерные шины радиальной конструкции.\n' +
+                '                        <br>Аварийный выпуск шасси происходит под действием собственного веса опоры после механического открытия замков убранного положения.\n' +
+                '                        <br><br>Амортизационная стойка обеспечивает восприятие нагрузок при разбегах и пробегах самолёта, поглощение энергии посадочных ударов, буксировку и швартовку самолета.\n' +
+                '                        <br><br>LGSCU - Система управления уборкой и основным выпуском шасси — электрогидравлического типа, управляется электронным блоком управления уборкой-выпуском шасси и поворотом передней опоры шасси.В процессе работы блок LGSCU производит контроль и оценку исправности электрических цепей бесконтактных выключателей и контроль работоспособности каналов блока LGSCU.<br>Блок LGSCU — двухканальный. Каждый канал оснащен бесконтактными датчиками положения и обжатия опор шасси.\n' +
+                '                    </p>\n' +
+                '                </div>';
+            break;
+        case 2:
+            break;
+        case 3:
+            break;
+        case 4:
+            break;
+    }
+    return content;
+};
 
 const popupWindows = (()=>{
     const togglePopup = action=>{
@@ -19,8 +45,18 @@ const popupWindows = (()=>{
         hide: ()=>{
             togglePopup('hide');
         },
-        change: ()=>{
-
+        change: num=>{
+            num = parseInt(num);
+            let domElem = document.createElement('div');
+            domElem.className = 'popup-content';
+            console.log(num);
+            domElem.innerHTML = popupContent(num);
+            // popupDotsAnimate.monitoring(domElem);
+            document.querySelector('.popup__block-content').innerHTML = '';
+            document.querySelector('.popup__block-content').addEventListener('DOMContentLoaded',()=>{
+                console.log('123');
+            });
+            document.querySelector('.popup__block-content').appendChild(domElem);
         },
     }
 })();
@@ -93,7 +129,6 @@ const popupDotsAnimate = (()=>{
     let normalizeX = (dotsContainer.offsetWidth - document.body.offsetWidth)/2;
     let normalizeY = (dotsContainer.offsetHeight - document.body.offsetHeight)/2;
     let maxScale = (dotsContainer.offsetWidth+dotsContainer.offsetHeight)/3;
-    console.log(maxScale);
     let eventers = [];
     class Elem {
         constructor(item) {
@@ -109,18 +144,15 @@ const popupDotsAnimate = (()=>{
         if(!disabledEvents&&eventers.length>0) {
             posX = e.clientX;
             posY = e.clientY;
-            // let item = eventers[0];
             eventers.forEach((item)=>{
                 let diffX = Math.abs(posX - item.x);
                 let diffY = Math.abs(posY - item.y);
                 let diffSum = diffX+diffY;
-                // console.log(diffSum);
                 if (diffSum>maxScale) {
                     item.item.style.transform = 'scale(-0.66)';
                 } else if (diffSum<50) {
                     item.item.style.transform = 'scale(-1)';
                 } else {
-                    console.log(parseFloat((diffSum/3/maxScale).toFixed(2))-1);
                     item.item.style.transform = 'scale('+ (parseFloat((diffSum/3/maxScale).toFixed(2))-1) +')';
                 }
             });
@@ -146,6 +178,7 @@ document.addEventListener('click', (e) => {
         popupWindows.hide();
     }
     if (event.closest('.dots__item-container')) {
+        popupWindows.change(event.closest('.dots__item-container').dataset.id);
         popupWindows.show();
     }
 });
