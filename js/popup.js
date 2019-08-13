@@ -89,21 +89,50 @@ const popupDots = (() => {
 const popupDotsAnimate = (()=>{
     let posX = 0;
     let posY = 0;
-    eventers = [];
+    const dotsContainer = document.querySelector('.dots__container');
+    let normalizeX = (dotsContainer.offsetWidth - document.body.offsetWidth)/2;
+    let normalizeY = (dotsContainer.offsetHeight - document.body.offsetHeight)/2;
+    let maxScale = (dotsContainer.offsetWidth+dotsContainer.offsetHeight)/3;
+    console.log(maxScale);
+    let eventers = [];
+    class Elem {
+        constructor(item) {
+            this.x = item.offsetLeft + item.offsetWidth/2 - normalizeX;
+            this.y = item.offsetTop + item.offsetHeight/2 - normalizeY;
+            this.item = item.querySelector('.dots__item');
+        }
+    }
     const listenerHover = ((item)=>{
-        console.log(item);
+
     });
     document.addEventListener('mousemove', e=>{
-        if(!disabledEvents&&eventers) {
-            posX = e.layerX;
-            posY = e.layerY;
+        if(!disabledEvents&&eventers.length>0) {
+            posX = e.clientX;
+            posY = e.clientY;
+            // let item = eventers[0];
+            eventers.forEach((item)=>{
+                let diffX = Math.abs(posX - item.x);
+                let diffY = Math.abs(posY - item.y);
+                let diffSum = diffX+diffY;
+                // console.log(diffSum);
+                if (diffSum>maxScale) {
+                    item.item.style.transform = 'scale(-0.66)';
+                } else if (diffSum<50) {
+                    item.item.style.transform = 'scale(-1)';
+                } else {
+                    console.log(parseFloat((diffSum/3/maxScale).toFixed(2))-1);
+                    item.item.style.transform = 'scale('+ (parseFloat((diffSum/3/maxScale).toFixed(2))-1) +')';
+                }
+            });
         }
     });
     return {
         monitoring: event=>{
             if (eventers.length>2)
                 eventers = [];
-            eventers.push(event);
+            setTimeout(()=>{
+                eventers.push(new Elem(event));
+            },3);
             listenerHover(event);
         }
     }
