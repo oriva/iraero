@@ -22,6 +22,35 @@ document.addEventListener('click', e => {
     }
 });
 
+document.addEventListener('keydown', e=>{
+    e.preventDefault();
+    let delta = 0;
+    switch (e.keyCode) {
+        case 37:
+            delta = 1;
+            break;
+        case 38:
+            delta = 1;
+            break;
+        case 39:
+            delta = -1;
+            break;
+        case 40:
+            delta = -1;
+            break;
+    }
+    if (!disabledEvents && document.querySelector('.popup').classList.contains('hide')) {
+        let batya = document.querySelector('.footer-dots .active').parentNode;
+        if (delta > 0) {
+            if (batya.previousElementSibling)
+                changeDots(batya.previousElementSibling.querySelector('a'));
+        } else if (delta < 0) {
+            if (batya.nextElementSibling)
+                changeDots(batya.nextElementSibling.querySelector('a'));
+        }
+    }
+});
+
 document.addEventListener('DOMContentLoaded', () => {
     if (window.innerWidth < 1980) {
         videoBlock.src = 'video/fullHD/' + getLink('video', 1);
