@@ -150,7 +150,7 @@ const popupDotsAnimate = (()=>{
                 let diffSum = diffX+diffY;
                 if (diffSum>maxScale) {
                     item.item.style.transform = 'scale(-0.66)';
-                } else if (diffSum<50) {
+                } else if (diffSum<160) {
                     item.item.style.transform = 'scale(-1)';
                 } else {
                     item.item.style.transform = 'scale('+ (parseFloat((diffSum/3/maxScale).toFixed(2))-1) +')';
