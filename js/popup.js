@@ -56,7 +56,7 @@ const popupContent = (number) => {
         case 6:
             content = '<img src="img/popup/economic/1.jpg" alt="" class="popup-content__img-100">' +
                 '<div class="popup-content__padding-v">' +
-                    '<span class="popup-content__title">Двигатели</span>' +
+                    '<span class="popup-content__title">Экономика</span>' +
                     '<p>Вместимость пассажиров: 97 кресел (с учетом бизнес класса) и 100 кресел в одноклассной компоновке' +
                     '<br><br>Дальность полета: 4,878 км' +
                     '<br><br>Максимальный взлетный вес: 49450 кг</p>' +
@@ -154,7 +154,7 @@ const popupWindows = (()=>{
 const popupDots = (() => {
     const dotsContainer = document.querySelector('.dots__container');
     // getPosition left,top(%), dataId
-    const getPosition = [[[41, 43, 1], [72, 43, 2], [44, 71, 3]], [[57, 49, 4], [72, 58, 5], [88, 48, 6]], [[48, 22, 7], [53, 53, 8], [82, 18, 9]]];
+    const getPosition = [[[41, 43, 1], [72, 43, 2], [44, 71, 3]], [[57, 49, 4], [72, 58, 5], [88, 48, 6]], [[48, 22, 7], [53, 53, 8], [82, 18, 9]], [[48, 22, 10], [53, 53, 11], [82, 18, 12]]];
     const dotElemCreate = leftTop => {
         let duru = document.createElement('div');
         duru.className = 'dots__item-container hide';
@@ -173,11 +173,11 @@ const popupDots = (() => {
         if(action==='hide'&&dotsItemContainer[2])
             dotsItemContainer[2].addEventListener('transitionend',()=>{
                 dotElemRemove();
-                if(from<4)
+                if(from<5)
                     createDots(from-1);
             });
         if(action==='hide'&&!dotsItemContainer[2]) {
-            if(from<4)
+            if(from<5)
                 createDots(from-1);
         }
         dotsItemContainer.forEach(item=>{
@@ -199,7 +199,7 @@ const popupDots = (() => {
     };
     return {
         createDots: activeNum => {
-            if(from<4)
+            if(from<5)
                 createDots(activeNum - 1);
         },
         showDots: () => {

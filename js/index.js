@@ -23,7 +23,7 @@ document.addEventListener('click', e => {
 });
 
 document.addEventListener('keydown', e=>{
-    e.preventDefault();
+    // e.preventDefault();
     let delta = 0;
     switch (e.keyCode) {
         case 37:
@@ -70,19 +70,19 @@ const getLink = (type, number) => {
     if (type === 'image') {
         switch (number) {
             case 1:
-                link = '1.png';
+                link = '1.jpg';
                 break;
             case 2:
-                link = '2.png';
+                link = '2.jpg';
                 break;
             case 3:
-                link = '3.png';
+                link = '3.jpg';
                 break;
             case 4:
-                link = '4.png';
+                link = '4.jpg';
                 break;
             case 5:
-                link = '5.png';
+                link = '5.jpg';
                 break;
         }
     } else {
@@ -271,6 +271,16 @@ const changeDots = target => {
     dots.visibleToggle();
     goVideo(target);
     from = parseInt(target.dataset.to);
+
+    if (from === 4) {
+        setTimeout(()=>{
+            document.body.classList.add('tour-party');
+        }, 200);
+    } else {
+        setTimeout(()=>{
+            document.body.classList.remove('tour-party');
+        }, 200);
+    }
     popupDots.hideDots();
 };
 
