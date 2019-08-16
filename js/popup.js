@@ -128,8 +128,18 @@ const popupContent = (number) => {
 const popupWindows = (()=>{
     const createTour = ()=>{
         let tourBlock = document.querySelector('.tour-3d');
-        tourBlock.innerHTML = '<iframe src="http://irk3d.ru/vt/ssj100/ssj100.html" frameborder="0"></iframe>';
+        tourBlock.innerHTML = '<div class="tour-3d__close"></div><iframe src="http://irk3d.ru/vt/ssj100/ssj100.html" frameborder="0"></iframe>';
         tourBlock.classList.remove('hide');
+        const removeTourBlock = (()=>{
+            tourBlock.innerHTML = '';
+            tourBlock.removeEventListener('transitionend', removeTourBlock);
+        });
+        tourBlock.addEventListener('click', e=>{
+            if(e.target.closest('.tour-3d__close')) {
+                tourBlock.addEventListener('transitionend', removeTourBlock);
+                tourBlock.classList.add('hide');
+            }
+        });
     };
     const createPopup = num=>{
         let domElem = document.createElement('div');

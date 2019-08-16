@@ -6,11 +6,26 @@
   height: 100%
   width: 100%
   transition: .5s ease-in-out
+  background: #000 url('../img/animation-load.svg') no-repeat center
   &.hide
     left: 110%
   iframe
     height: 100%
     width: 100%
+  &__close
+    display: block
+    position: absolute
+    top: 20px
+    right: 20px
+    width: 50px
+    height: 50px
+    background-image: url('../img/popup/cursor.svg')
+    background-size: cover
+    cursor: pointer
+    transition: .4s
+    &:hover
+      transform: scale(1.1)
+
 
 .popup
   position: absolute
