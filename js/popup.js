@@ -99,6 +99,28 @@ const popupContent = (number) => {
                     '<p><img src="img/popup/specifications/2.jpg" alt="" class="popup-content__img-100"></p>' +
                 '</div>';
             break;
+        case 11:
+            content = '<img src="img/popup/tour/pre1.jpg" alt="" class="popup-content__img-100">' +
+                '<div class="popup-content__padding-v">' +
+                    '<span class="popup-content__title">Общие характеристики</span>' +
+                    '<img src="img/popup/tour/table1.jpg" alt="" class="popup-content__img-100">' +
+                '</div>';
+            break;
+        case 12:
+            content = '<img src="img/popup/tour/2.jpg" alt="" class="popup-content__img-100">' +
+                '<div class="popup-content__padding-v">' +
+                    '<span class="popup-content__title">Общие характеристики</span>' +
+                    '<p><strong>Более широкие проходы</strong>' +
+                    '<br><br>SSJ100 является единственным самолетов в своем классе с проходами более полуметра, что позволяет ускорить посадку и высадку пассажиров. Летный персонал может с легкостью передвигаться по салону, при этом остается достаточно пространства для обеспечения комфорта пассажиров.</p>' +
+                    '<img src="img/popup/tour/pre1.jpg" alt="" class="popup-content__img-100">' +
+                    '<p><strong>Впервые - пятиместный ряд</strong>' +
+                    '<br><br>SSJ100 - первый самолет в своем классе с пятью креслами в ряду. Данная конфигурация позволяет обеспечить еще больше пространства в салоне по сравнению с конкурентами. Независимо от того, где именно сидят пассажиры- посередине или с краю - все они могут насладиться комфортным индивидуальным пространством.</p>' +
+                    '<br><p><strong>Легкодоступные вместительные полки</strong>' +
+                    '<br><br>SSJ100 в отличие от конкурентов предлагает больший объем багажных полок для каждого пассажира.' +
+                    '<br><br>Они становятся важным элементом салона в случае, если эксплуатационная среда ставит приоритетом ручную кладь.</p>' +
+                    '<img src="img/popup/tour/pre1.jpg" alt="" class="popup-content__img-100">' +
+                '</div>';
+            break;
     }
     return content;
 };
@@ -154,14 +176,17 @@ const popupWindows = (()=>{
 const popupDots = (() => {
     const dotsContainer = document.querySelector('.dots__container');
     // getPosition left,top(%), dataId
-    const getPosition = [[[41, 43, 1], [72, 43, 2], [44, 71, 3]], [[57, 49, 4], [72, 58, 5], [88, 48, 6]], [[48, 22, 7], [53, 53, 8], [82, 18, 9]], [[48, 22, 10], [53, 53, 11], [82, 18, 12]]];
+    const getPosition = [[[41, 43, 1], [72, 43, 2], [44, 71, 3]], [[57, 49, 4], [72, 58, 5], [88, 48, 6]], [[48, 22, 7], [53, 53, 8], [82, 18, 9]], [[47, 69, 10], [63, 42, 11], [30, 42, 12]]];
     const dotElemCreate = leftTop => {
         let duru = document.createElement('div');
         duru.className = 'dots__item-container hide';
         duru.style.left = leftTop[0] + '%';
         duru.style.top = leftTop[1] + '%';
         duru.dataset.id = leftTop[2];
-        duru.innerHTML = '<div class="dots__item"><div class="dots__item-circle"></div></div>';
+        if (leftTop[2]===10)
+            duru.innerHTML = '<div class="dots__item"><div class="dots__item-circle">360</div></div>';
+        else
+            duru.innerHTML = '<div class="dots__item"><div class="dots__item-circle"></div></div>';
         popupDotsAnimate.monitoring(duru);
         return duru;
     };
