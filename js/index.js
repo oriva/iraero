@@ -1,7 +1,7 @@
 //change dots
-let from = 1;
-let toForListener = 2;
-let disabledEvents = false;
+// let from = 1;
+// let toForListener = 2;
+// let disabledEvents = false;
 let forListenerVideo = '';
 const imageBlock = document.querySelectorAll('.main-content__img');
 const videoBlock = document.querySelector('.main-content__video');
@@ -57,7 +57,6 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
         videoBlock.src = 'video/4k/' + getLink('video', 1);
     }
-    popupDots.showDots();
 });
 
 

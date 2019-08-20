@@ -9,7 +9,7 @@
   background: #000 url('../img/animation-load.svg') no-repeat center
   &.hide
     left: 110%
-  iframe
+  &__content, iframe, video
     height: 100%
     width: 100%
   &__close
@@ -23,8 +23,22 @@
     background-size: cover
     cursor: pointer
     transition: .4s
+    z-index: 3
     &:hover
       transform: scale(1.1)
+
+.owl-gallery
+  height: 100vh
+  & *
+    height: 100%
+  img
+    object-fit: cover
+  .owl-nav
+    position: absolute
+    bottom: 0
+    right: 0
+    height: auto
+    button
 
 
 .popup
@@ -69,7 +83,7 @@
       right: -100%
     .popup-content__title
       &::after
-        width: 0rem
+        width: 0em
 
 
 .popup-content
@@ -82,40 +96,40 @@
   min-height: 100%
   top: 0
   right: 0
-  padding-bottom: 2rem
+  padding-bottom: 2em
   transition: .3s
   p
     font-weight: 100
     padding-right: 80px
   &__padding-v
-    padding-left: 3.5rem
-    padding-right: 3.5rem
+    padding-left: 3.5em
+    padding-right: 3.5em
   &__padding-l
-    padding-left: 3.5rem
+    padding-left: 3.5em
   &__img-100
     display: block
     width: 100%
   &__line
     left: 0
     height: 3px
-    width: 9rem
+    width: 3em
     background-color: #59a9e3
-    margin: 2.3rem 0
+    margin: 2.3em 0
   &__title
     display: block
     position: relative
-    font-size: 2.5rem
+    font-size: 2.5em
     text-transform: uppercase
-    padding-top: 3rem
-    padding-bottom: 2rem
-    margin-bottom: 2.3rem
+    padding-top: 2em
+    padding-bottom: 1.1em
+    margin-bottom: 1.5em
     &::after
       content: ''
       position: absolute
       bottom: 0
       left: 0
       height: 3px
-      width: 9rem
+      width: 3em
       background-color: #59a9e3
       transition: .5s 1s ease-in-out
 

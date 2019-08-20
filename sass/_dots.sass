@@ -68,7 +68,12 @@
     align-items: center
     -ms-flex-pack: center
     justify-content: center
-    transition: .3s
+    transition: .3s ease-in-out
+    svg
+      width: 100%
+      padding: 20%
+      path
+        transition: .1s ease-in-out
 
 @media (min-width: 1000px)
   .dots
@@ -92,11 +97,13 @@
       height: 70px
       background-color: rgba(255, 255, 255, 0.7)
       border-radius: 50%
-      transition: .1s
+      transition: .1s ease-in-out
       backface-visibility: visible
       transform: scale(-1)
       &:hover
         background-color: rgba(34, 71, 195, 0.7)
+        svg path
+          fill: rgba(34, 71, 195, 0.7)
     &__item-circle
       width: 70%
       height: 70%

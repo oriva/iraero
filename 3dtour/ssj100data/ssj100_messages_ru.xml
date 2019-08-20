@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<krpano>
+
+<!-- ************************ -->
+<!--         Messages         -->
+<!-- ************************ -->
+
+  <data name="ru_project_title"><![CDATA[Сухой Superjet 100. Виртуальный тур Irk3D]]></data>
+  <data name="ru_project_author_name"><![CDATA[Сделано IRK3D Заборовский Дениc]]></data>
+  <data name="ru_project_author_url"><![CDATA[http://irk3d.ru]]></data>
+
+
+
+  <data name="ru_pano23_title"><![CDATA[Кабина пилота]]></data>
+  <data name="ru_spotpoint29_tooltip"><![CDATA[Бизнес класс]]></data>
+
+
+  <data name="ru_pano21_title"><![CDATA[Бизнес класс]]></data>
+  <data name="ru_spotpoint30_tooltip"><![CDATA[Салон]]></data>
+  <data name="ru_spotpoint31_tooltip"><![CDATA[Кабина пилота]]></data>
+
+
+  <data name="ru_pano24_title"><![CDATA[Салон]]></data>
+  <data name="ru_spotpoint32_tooltip"><![CDATA[Хвостовая часть]]></data>
+  <data name="ru_spotpoint33_tooltip"><![CDATA[Бизнес класс]]></data>
+
+
+  <data name="ru_pano22_title"><![CDATA[Хвостовая часть]]></data>
+  <data name="ru_spotpoint34_tooltip"><![CDATA[Салон]]></data>
+
+
+
+
+
+
+  <data name="ru_logowebsiteurl"><![CDATA[http://irk3d.ru]]></data>
+  <data name="ru_logotooltipText"><![CDATA[Перейти на сайт разработчика IRK3D.ru]]></data>
+  <data name="ru_controlBar_classicopenFsTip"><![CDATA[Во весь экран]]></data>
+  <data name="ru_controlBar_classiccloseFsTip"><![CDATA[Выйти из полноэкранного режима]]></data>
+  <data name="ru_controlBar_classicautorotateOnTip"><![CDATA[Включить автовращение]]></data>
+  <data name="ru_controlBar_classicautorotateOffTip"><![CDATA[Выключить автовращение]]></data>
+  <data name="ru_controlBar_classicshowThumbnailsTip"><![CDATA[Показать Панель точек обзора]]></data>
+  <data name="ru_controlBar_classichideThumbnailsTip"><![CDATA[Скрыть Панель точек обзора]]></data>
+  <data name="ru_controlBar_classicgyroOnTip"><![CDATA[Включить гироскоп]]></data>
+  <data name="ru_controlBar_classicgyroOffTip"><![CDATA[Отключить гироскоп]]></data>
+  <data name="ru_controlBar_classicgyroNotTip"><![CDATA[Гироскоп недоступен]]></data>
+  <data name="ru_controlBar_classicenterVRTip"><![CDATA[Включить VR режим]]></data>
+  <data name="ru_controlBar_classicenterVRNotTip"><![CDATA[VR режим недоступен]]></data>
+  <data name="ru_controlBar_classicdisplayControlsTip"><![CDATA[Показать Панель управления]]></data>
+  <data name="ru_controlBar_classichideControlsTip"><![CDATA[Скрыть Панель управления]]></data>
+  <data name="ru_loadertextloaderinfo"><![CDATA[Идет загрузка данных. Пожалуйста подождите.]]></data>
+  <data name="ru_contextmenuopenFsLabel"><![CDATA[Enter Fullscreen]]></data>
+  <data name="ru_contextmenucloseFsLabel"><![CDATA[Exit Fullscreen]]></data>
+  <data name="ru_contextmenunormallabel"><![CDATA[Нормальный вид]]></data>
+  <data name="ru_contextmenuarchitecturallabel"><![CDATA[Архитектурный вид]]></data>
+  <data name="ru_contextmenulittleplanetlabel"><![CDATA[Вид Маленькая планета]]></data>
+  <data name="ru_contextmenufisheyeballlabel"><![CDATA[Вид Магический шар]]></data>
+
+
+  <data name="ru_vr_setup_hmd0"><![CDATA[SELECT YOUR HMD]]></data>
+  <data name="ru_vr_setup_advanced"><![CDATA[ADVANCED SETTINGS]]></data>
+  <data name="ru_vr_setup_title"><![CDATA[WEB VR SETTINGS]]></data>
+  <data name="ru_vr_setup_dvn1"><![CDATA[Device:]]></data>
+  <data name="ru_vr_setup_siz1"><![CDATA[Screen size:]]></data>
+  <data name="ru_vr_setup_ipd1"><![CDATA[IPD:]]></data>
+  <data name="ru_vr_setup_hmd1"><![CDATA[HMD:]]></data>
+  <data name="ru_vr_setup_hmd3"><![CDATA[Customize]]></data>
+  <data name="ru_vr_setup_cal"><![CDATA[Calibrate gyroscope]]></data>
+  <data name="ru_vr_setup_sav"><![CDATA[SAVE]]></data>
+  <data name="ru_vr_setup_rst"><![CDATA[RESET]]></data>
+  <data name="ru_vr_setup_simple"><![CDATA[SIMPLE]]></data>
+  <data name="ru_vr_setup_cls"><![CDATA[CLOSE]]></data>
+  <data name="ru_vr_setup_m31"><![CDATA[HMD SETTINGS]]></data>
+  <data name="ru_vr_setup_fov1"><![CDATA[FOV:]]></data>
+  <data name="ru_vr_setup_dst1"><![CDATA[Distortion:]]></data>
+  <data name="ru_vr_setup_d2tx"><![CDATA[Distortion 2:]]></data>
+  <data name="ru_vr_setup_vig1"><![CDATA[Vignette:]]></data>
+  <data name="ru_vr_setup_cac1"><![CDATA[Chromatic aberration:]]></data>
+  <data name="ru_vr_setup_olp1"><![CDATA[Overlap:]]></data>
+  <data name="ru_vr_setup_m35"><![CDATA[RETURN]]></data>
+  <data name="ru_vr_setup_cb1"><![CDATA[GYROSCOPE]]></data>
+  <data name="ru_vr_setup_cb2"><![CDATA[Place the device on a flat and[br]stable surface and tab CALIBRATE[br]to correct a gyroscope drifting.]]></data>
+  <data name="ru_vr_setup_cb3"><![CDATA[CALIBRATE]]></data>
+  <data name="ru_vr_setup_cb4"><![CDATA[RESET]]></data>
+  <data name="ru_vr_setup_cb5"><![CDATA[RETURN]]></data>
+  <data name="ru_vr_setup_cb6"><![CDATA[Calibrating...]]></data>
+  <data name="ru_vr_setup_cb7"><![CDATA[Successful calibration]]></data>
+  <data name="ru_vr_setup_cb8"><![CDATA[Calibration failed]]></data>
+  <data name="ru_vr_setup_unavailable"><![CDATA[VR mode[br]is unavailable on your device]]></data>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</krpano>
