@@ -30,7 +30,7 @@ if (window.innerWidth < 1980) {
         loadFunction(item);
     });
 } else {
-    ['video/fullHD/tr1.mp4', 'video/fullHD/tr2.mp4', 'video/fullHD/tr3.mp4', 'video/fullHD/tr4.mp4', 'img/4k/1.png', 'img/4k/2.png', 'img/4k/3.png', 'img/4k/4.png', 'img/4k/5.png'].forEach((item)=>{
+    ['video/fullHD/tr1.mp4', 'video/fullHD/tr2.mp4', 'video/fullHD/tr3.mp4', 'video/fullHD/tr4.mp4', 'img/fullHD/1.png', 'img/fullHD/2.png', 'img/fullHD/3.png', 'img/fullHD/4.png', 'img/fullHD/5.png'].forEach((item)=>{
         loadFunction(item);
     });
 }
