@@ -7,7 +7,6 @@ let videoCounterForLoad = 0;
 let req = [];
 disabledEvents = true;
 loadFunction = (links)=>{
-    console.log(links);
     req[videoCounterForLoad] = new XMLHttpRequest();
     req[videoCounterForLoad].open('GET', links, true);
     req[videoCounterForLoad].responseType = 'blob';
