@@ -6,6 +6,11 @@ const videoBlock = document.querySelector('.main-content__video');
 
 document.addEventListener('DOMContentLoaded', () => {
     popupDots.showDots();
+    if (window.innerWidth < 1980) {
+        videoBlock.src = 'video/fullHD/' + getLink('video', 1);
+    } else if(window.innerWidth > 768) {
+        videoBlock.src = 'video/4k/' + getLink('video', 1);
+    }
 });
 
 let isPc = (()=>{

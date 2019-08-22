@@ -36,16 +36,6 @@ if (window.innerWidth < 1980) {
 }
 
 
-
-if(isPc)
-    document.addEventListener('DOMContentLoaded', () => {
-        if (window.innerWidth < 1980) {
-            videoBlock.src = 'video/fullHD/' + getLink('video', 1);
-        } else {
-            videoBlock.src = 'video/4k/' + getLink('video', 1);
-        }
-    });
-
 document.querySelector('.panorama').addEventListener('transitionend', () => {
     panorama.monitoring();
 });
@@ -174,8 +164,8 @@ const makeVideo = (() => {
             disabledEvents = false;
         },
         change: number => {
-            source[0].src = 'video/fullHD/' + getLink('video', parseInt(number));
-            source[1].src = 'video/4k/' + getLink('video', parseInt(number));
+            // source[0].src = 'video/fullHD/' + getLink('video', parseInt(number));
+            // source[1].src = 'video/4k/' + getLink('video', parseInt(number));
             if (window.innerWidth < 1980) {
                 videoBlock.src = 'video/fullHD/' + getLink('video', parseInt(number));
             } else {
