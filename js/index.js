@@ -157,7 +157,7 @@ const makeImg = (() => {
             setTimeout(()=>{
                 imageBlock[0].setAttribute('src', 'img/fullHD/' + getLink('image', parseInt(number)));
                 imageBlock[1].setAttribute('src', 'img/4k/' + getLink('image', parseInt(number)));
-            },1000);
+            },300);
 
             return true;
         }
@@ -337,15 +337,16 @@ const listenerVideoPlay = clickBut => {
         setTimeout(function () {
             videoSrcChange(clickBut);
             disabledEvents = false;
-        }, 1000);
+        }, 1);
     }(clickBut));
 };
 
 const goVideo = clickBut => {
-    console.log('123');
     if (canChange(parseInt(clickBut.dataset.to)) === 1) {
         makeImg.hide();
-        makeImg.change(clickBut.dataset.to);
+        setTimeout(() => {
+            makeImg.change(clickBut.dataset.to);
+        }, 200);
         setTimeout(() => {
             videoBlock.play();
             text.change(parseInt(clickBut.dataset.to));

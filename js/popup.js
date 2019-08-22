@@ -241,7 +241,9 @@ const popupWindows = (() => {
         tourBlock.addEventListener('click', e => {
             if (e.target.closest('.tour-3d__close')) {
                 tourBlock.classList.add('hide');
-                tourBlock.addEventListener('transitionend', removeTourBlock(tourBlock.querySelector('.tour-3d__content')));
+                setTimeout(()=>{
+                    tourBlock.addEventListener('transitionend', removeTourBlock(tourBlock.querySelector('.tour-3d__content')));
+                },1);
             }
         });
     };
