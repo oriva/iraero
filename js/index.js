@@ -103,19 +103,19 @@ const getLink = (type, number) => {
     if (type === 'image') {
         switch (number) {
             case 1:
-                link = '1.jpg';
+                link = '1.png';
                 break;
             case 2:
-                link = '2.jpg';
+                link = '2.png';
                 break;
             case 3:
-                link = '3.jpg';
+                link = '3.png';
                 break;
             case 4:
-                link = '4.jpg';
+                link = '4.png';
                 break;
             case 5:
-                link = '5.jpg';
+                link = '5.png';
                 break;
         }
     } else {
@@ -156,7 +156,7 @@ const makeImg = (() => {
         change: (number) => {
             setTimeout(()=>{
                 imageBlock[0].setAttribute('src', 'img/fullHD/' + getLink('image', parseInt(number)));
-                imageBlock[1].setAttribute('src', 'img/4k/' + getLink('image', parseInt(number)));
+                imageBlock[1].setAttribute('src', 'img/fullHD/' + getLink('image', parseInt(number)));
             },1000);
 
             return true;
@@ -175,11 +175,11 @@ const makeVideo = (() => {
         },
         change: number => {
             source[0].src = 'video/fullHD/' + getLink('video', parseInt(number));
-            source[1].src = 'video/4k/' + getLink('video', parseInt(number));
+            source[1].src = 'video/fullHD/' + getLink('video', parseInt(number));
             if (window.innerWidth < 1980) {
                 videoBlock.src = 'video/fullHD/' + getLink('video', parseInt(number));
             } else {
-                videoBlock.src = 'video/4k/' + getLink('video', parseInt(number));
+                videoBlock.src = 'video/fullHD/' + getLink('video', parseInt(number));
             }
         }
     }
