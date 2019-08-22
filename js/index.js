@@ -41,6 +41,7 @@ document.querySelector('.panorama').addEventListener('transitionend', () => {
 });
 
 videoBlock.addEventListener('ended', () => {
+    videoBlock.currentTime = videoBlock.duration;
     listenerVideoPlay(forListenerVideo);
 });
 

@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3ae4d242-ba8a-495e-af7c-519e5c584cea" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/connect.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/connect.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/index.js" afterDir="false" />
     </list>
@@ -32,6 +31,7 @@
         <counts>
           <entry key="css" value="5" />
           <entry key="gitignore" value="1" />
+          <entry key="htaccess" value="1" />
           <entry key="js" value="21" />
           <entry key="php" value="1" />
           <entry key="sass" value="51" />
@@ -44,7 +44,7 @@
           <entry key="CSS" value="5" />
           <entry key="JavaScript" value="21" />
           <entry key="PHP" value="1" />
-          <entry key="PLAIN_TEXT" value="1" />
+          <entry key="PLAIN_TEXT" value="2" />
           <entry key="SVG" value="2" />
           <entry key="Sass" value="51" />
           <entry key="TypeScript" value="3" />
@@ -55,7 +55,7 @@
           <entry key="css" value="11" />
           <entry key="gitignore" value="3" />
           <entry key="html" value="1527" />
-          <entry key="js" value="9953" />
+          <entry key="js" value="9997" />
           <entry key="php" value="5" />
           <entry key="sass" value="4945" />
         </counts>
@@ -64,7 +64,7 @@
         <counts>
           <entry key="CSS" value="12" />
           <entry key="HTML" value="1617" />
-          <entry key="JavaScript" value="9862" />
+          <entry key="JavaScript" value="9906" />
           <entry key="PHP" value="5" />
           <entry key="PLAIN_TEXT" value="3" />
           <entry key="Sass" value="4945" />
@@ -131,8 +131,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="36" selection-start-line="36" selection-end-line="36" />
+            <state relative-caret-position="212">
+              <caret line="88" column="6" selection-start-line="88" selection-start-column="6" selection-end-line="88" selection-end-column="6" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -143,8 +143,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/connect.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="230">
-              <caret line="10" column="37" selection-start-line="10" selection-start-column="37" selection-end-line="10" selection-end-column="37" />
+            <state relative-caret-position="207">
+              <caret line="9" column="41" selection-start-line="9" selection-start-column="41" selection-end-line="9" selection-end-column="41" />
             </state>
           </provider>
         </entry>
@@ -171,7 +171,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>let popupBg = document.querySelector('.popup__bg');</find>
       <find>footer-dots</find>
       <find>.popup-content</find>
       <find>__arrow-block</find>
@@ -193,14 +192,15 @@
       <find>wheel</find>
       <find>tour</find>
       <find>specifications</find>
-      <find>scr</find>
-      <find>video</find>
       <find>img/4k/</find>
       <find>'img/4k/'</find>
       <find>'img/4k/' + getLink</find>
       <find>source</find>
       <find>DOMContentLoaded</find>
       <find>video/fullHD/</find>
+      <find>scr</find>
+      <find>getLink</find>
+      <find>video</find>
     </findStrings>
     <replaceStrings>
       <replace>&lt;br&gt;</replace>
@@ -230,6 +230,7 @@
         <option value="$PROJECT_DIR$/sass/index.sass" />
         <option value="$PROJECT_DIR$/js/popup.js" />
         <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/.htaccess" />
         <option value="$PROJECT_DIR$/js/index.js" />
         <option value="$PROJECT_DIR$/js/connect.js" />
       </list>
@@ -272,6 +273,17 @@
               <item name="iraero" type="b2602c69:ProjectViewProjectNode" />
               <item name="iraero" type="462c0819:PsiDirectoryNode" />
               <item name="sass" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="iraero" type="b2602c69:ProjectViewProjectNode" />
+              <item name="iraero" type="462c0819:PsiDirectoryNode" />
+              <item name="video" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="iraero" type="b2602c69:ProjectViewProjectNode" />
+              <item name="iraero" type="462c0819:PsiDirectoryNode" />
+              <item name="video" type="462c0819:PsiDirectoryNode" />
+              <item name="fullHD" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -372,12 +384,12 @@
       <workItem from="1566354519810" duration="78000" />
       <workItem from="1566354622915" duration="3144000" />
       <workItem from="1566364619966" duration="4000" />
-      <workItem from="1566364643320" duration="23549000" />
+      <workItem from="1566364643320" duration="24012000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="173719000" />
+    <option name="totallyTimeSpent" value="174182000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
@@ -553,13 +565,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sass/index.sass">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="388">
-          <caret line="27" column="37" lean-forward="true" selection-start-line="27" selection-start-column="37" selection-end-line="27" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/popup.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
@@ -607,10 +612,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.htaccess">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="30" selection-start-column="30" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sass/index.sass">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="388">
+          <caret line="27" column="37" lean-forward="true" selection-start-line="27" selection-start-column="37" selection-end-line="27" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/js/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="36" selection-start-line="36" selection-end-line="36" />
+        <state relative-caret-position="212">
+          <caret line="88" column="6" selection-start-line="88" selection-start-column="6" selection-end-line="88" selection-end-column="6" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
@@ -619,8 +638,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/connect.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="10" column="37" selection-start-line="10" selection-start-column="37" selection-end-line="10" selection-end-column="37" />
+        <state relative-caret-position="207">
+          <caret line="9" column="41" selection-start-line="9" selection-start-column="41" selection-end-line="9" selection-end-column="41" />
         </state>
       </provider>
     </entry>
