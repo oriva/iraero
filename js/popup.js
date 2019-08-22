@@ -182,7 +182,8 @@ const popupWindows = (() => {
         item.removeEventListener('transitionend', removeTourBlock);
     };
     const createTour = () => {
-        tourBlock.querySelector('.tour-3d__content').innerHTML = '<iframe src="http://irk3d.ru/vt/ssj100/ssj100.html" frameborder="0"></iframe>';
+        // tourBlock.querySelector('.tour-3d__content').innerHTML = '<iframe src="http://irk3d.ru/vt/ssj100/ssj100.html" frameborder="0"></iframe>';
+        tourBlock.querySelector('.tour-3d__content').innerHTML = '<iframe src="3dtour/ssj100.html" frameborder="0"></iframe>';
         tourBlock.classList.remove('hide');
         tourBlock.addEventListener('click', e => {
             if (e.target.closest('.tour-3d__close')) {

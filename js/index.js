@@ -26,11 +26,11 @@ loadFunction = (links)=>{
     req[videoCounterForLoad].send();
 };
 if (window.innerWidth < 1980) {
-    ['video/4k/tr1.mp4', 'video/4k/tr2.mp4', 'video/4k/tr3.mp4', 'video/4k/tr4.mp4'].forEach((item)=>{
+    ['video/4k/tr1.mp4', 'video/4k/tr2.mp4', 'video/4k/tr3.mp4', 'video/4k/tr4.mp4', 'img/4k/1.png', 'img/4k/2.png', 'img/4k/3.png', 'img/4k/4.png', 'img/4k/5.png'].forEach((item)=>{
         loadFunction(item);
     });
 } else {
-    ['video/fullHD/tr1.mp4', 'video/fullHD/tr2.mp4', 'video/fullHD/tr3.mp4', 'video/fullHD/tr4.mp4'].forEach((item)=>{
+    ['video/fullHD/tr1.mp4', 'video/fullHD/tr2.mp4', 'video/fullHD/tr3.mp4', 'video/fullHD/tr4.mp4', 'img/4k/1.png', 'img/4k/2.png', 'img/4k/3.png', 'img/4k/4.png', 'img/4k/5.png'].forEach((item)=>{
         loadFunction(item);
     });
 }
@@ -156,7 +156,7 @@ const makeImg = (() => {
         change: (number) => {
             setTimeout(()=>{
                 imageBlock[0].setAttribute('src', 'img/fullHD/' + getLink('image', parseInt(number)));
-                imageBlock[1].setAttribute('src', 'img/fullHD/' + getLink('image', parseInt(number)));
+                imageBlock[1].setAttribute('src', 'img/4k/' + getLink('image', parseInt(number)));
             },1000);
 
             return true;
@@ -175,11 +175,11 @@ const makeVideo = (() => {
         },
         change: number => {
             source[0].src = 'video/fullHD/' + getLink('video', parseInt(number));
-            source[1].src = 'video/fullHD/' + getLink('video', parseInt(number));
+            source[1].src = 'video/4k/' + getLink('video', parseInt(number));
             if (window.innerWidth < 1980) {
                 videoBlock.src = 'video/fullHD/' + getLink('video', parseInt(number));
             } else {
-                videoBlock.src = 'video/fullHD/' + getLink('video', parseInt(number));
+                videoBlock.src = 'video/4k/' + getLink('video', parseInt(number));
             }
         }
     }

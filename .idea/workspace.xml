@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3ae4d242-ba8a-495e-af7c-519e5c584cea" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/img/fullHD/4.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/img/fullHD/4.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/popup.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/popup.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -55,7 +54,7 @@
           <entry key="css" value="11" />
           <entry key="gitignore" value="3" />
           <entry key="html" value="1525" />
-          <entry key="js" value="9822" />
+          <entry key="js" value="9851" />
           <entry key="php" value="5" />
           <entry key="sass" value="4936" />
         </counts>
@@ -64,7 +63,7 @@
         <counts>
           <entry key="CSS" value="12" />
           <entry key="HTML" value="1615" />
-          <entry key="JavaScript" value="9731" />
+          <entry key="JavaScript" value="9760" />
           <entry key="PHP" value="5" />
           <entry key="PLAIN_TEXT" value="3" />
           <entry key="Sass" value="4936" />
@@ -118,11 +117,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="179" column="67" selection-start-line="179" selection-start-column="67" selection-end-line="179" selection-end-column="67" />
+            <state relative-caret-position="-1363">
+              <caret line="311" column="45" selection-start-line="311" selection-start-column="41" selection-end-line="311" selection-end-column="45" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -133,17 +132,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sass/index.sass">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="368">
-              <caret line="16" column="55" selection-start-line="16" selection-start-column="49" selection-end-line="16" selection-end-column="55" />
+            <state relative-caret-position="250">
+              <caret line="21" column="4" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="4" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/popup.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-5432">
-              <caret line="146" column="50" selection-start-line="146" selection-start-column="50" selection-end-line="146" selection-end-column="50" />
+            <state relative-caret-position="248">
+              <caret line="185" column="97" selection-start-line="185" selection-start-column="97" selection-end-line="185" selection-end-column="97" />
             </state>
           </provider>
         </entry>
@@ -161,8 +160,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>tour</find>
-      <find>owl-prev</find>
       <find>owl-nav</find>
       <find>disa</find>
       <find>disabledEvents</find>
@@ -189,8 +186,10 @@
       <find>video</find>
       <find>.jpg</find>
       <find>pano</find>
-      <find>scr</find>
       <find>fullHD</find>
+      <find>4k</find>
+      <find>scr</find>
+      <find>tour</find>
     </findStrings>
     <replaceStrings>
       <replace>&lt;br&gt;</replace>
@@ -216,12 +215,12 @@
         <option value="$PROJECT_DIR$/js/mobile.js" />
         <option value="$PROJECT_DIR$/sass/_mobile.sass" />
         <option value="$PROJECT_DIR$/sass/_popup.sass" />
-        <option value="$PROJECT_DIR$/js/popup.js" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/sass/_footer.sass" />
         <option value="$PROJECT_DIR$/sass/index.sass" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/js/index.js" />
+        <option value="$PROJECT_DIR$/js/popup.js" />
       </list>
     </option>
   </component>
@@ -232,9 +231,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="x" value="1680" />
-    <option name="width" value="1920" />
-    <option name="height" value="1080" />
+    <option name="width" value="1680" />
+    <option name="height" value="1050" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -248,6 +246,11 @@
             <path>
               <item name="iraero" type="b2602c69:ProjectViewProjectNode" />
               <item name="iraero" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="iraero" type="b2602c69:ProjectViewProjectNode" />
+              <item name="iraero" type="462c0819:PsiDirectoryNode" />
+              <item name="3dtour" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="iraero" type="b2602c69:ProjectViewProjectNode" />
@@ -358,18 +361,18 @@
       <workItem from="1566354519810" duration="78000" />
       <workItem from="1566354622915" duration="3144000" />
       <workItem from="1566364619966" duration="4000" />
-      <workItem from="1566364643320" duration="21336000" />
+      <workItem from="1566364643320" duration="21818000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="171506000" />
+    <option name="totallyTimeSpent" value="171988000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1680" y="0" width="1920" height="1080" extended-state="0" />
+    <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49846154" visible="true" weight="0.16314678" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49846154" visible="true" weight="0.18681984" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" sideWeight="0.50153846" side_tool="true" weight="0.16314678" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -381,7 +384,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.1948718" />
+      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.2010582" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" weight="0.32910052" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -539,6 +542,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/js/mobile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="291">
@@ -578,34 +588,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/popup.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-5432">
-          <caret line="146" column="50" selection-start-line="146" selection-start-column="50" selection-end-line="146" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/mobile.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sass/index.sass">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="16" column="55" selection-start-line="16" selection-start-column="49" selection-end-line="16" selection-end-column="55" />
+        <state relative-caret-position="250">
+          <caret line="21" column="4" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="4" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="179" column="67" selection-start-line="179" selection-start-column="67" selection-end-line="179" selection-end-column="67" />
+        <state relative-caret-position="-1363">
+          <caret line="311" column="45" selection-start-line="311" selection-start-column="41" selection-end-line="311" selection-end-column="45" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/popup.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="248">
+          <caret line="185" column="97" selection-start-line="185" selection-start-column="97" selection-end-line="185" selection-end-column="97" />
         </state>
       </provider>
     </entry>
