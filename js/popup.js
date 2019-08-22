@@ -143,7 +143,7 @@ const popupContent = (number) => {
         case 11:
             content = '<div class="popup-content__mob">' +
                 '<img src="img/iraero-logo_blue.png" alt="">' +
-                '<div class="popup-content__mob-closed"></div>' +
+                '<div class="popup-content__mob-closed"></div></div>' +
                 '<img src="img/popup/tour/pre1.jpg" alt="" class="popup-content__img-100">' +
                 '<div class="popup-content__padding-v">' +
                 '<span class="popup-content__title">Общие характеристики</span>' +
