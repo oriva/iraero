@@ -68,7 +68,8 @@ body
 
   &__dev
     position: absolute
-    writing-mode: sideways-lr
+    writing-mode: tb
+    transform: scale(-1)
     right: 0
     bottom: var(--bottom)
     max-width: 100%
@@ -84,7 +85,7 @@ body
     z-index: 2
     display: flex
     flex-wrap: wrap
-    align-items: end
+    align-items: flex-end
   &__dev-link
     display: block
     color: #fff
@@ -142,7 +143,6 @@ body
   min-width: 250px
   margin: 0
   position: relative
-  bottom: -3px
   & > li:first-child
     padding-left: 0
   & > li
