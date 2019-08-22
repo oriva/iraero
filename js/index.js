@@ -146,8 +146,11 @@ const makeImg = (() => {
         },
         change: (number) => {
             setTimeout(()=>{
-                imageBlock[0].setAttribute('src', 'img/fullHD/' + getLink('image', parseInt(number)));
-                imageBlock[1].setAttribute('src', 'img/4k/' + getLink('image', parseInt(number)));
+                if (window.innerWidth < 1980) {
+                    imageBlock[0].setAttribute('src', 'img/fullHD/' + getLink('image', parseInt(number)));
+                } else {
+                    imageBlock[1].setAttribute('src', 'img/4k/' + getLink('image', parseInt(number)));
+                }
             },300);
 
             return true;
