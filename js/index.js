@@ -222,7 +222,7 @@ const panorama = (() => {
 })();
 
 const text = (() => {
-    const textArea = [document.querySelector('.fn-tb__little'), document.querySelector('.fn-tb__big')];
+    const textArea = [document.querySelector('.footer__content .fn-tb__little'), document.querySelector('.footer__content .fn-tb__big')];
     const textInfo = [
         ['Новый стандарт безопасности', 'Sukhoi Superjet 100'],
         ['Новый стандарт безопасности', 'Единственный в своем роде'],
@@ -307,6 +307,7 @@ const listenerVideoPlay = clickBut => {
 };
 
 const goVideo = clickBut => {
+    console.log('123');
     if (canChange(parseInt(clickBut.dataset.to)) === 1) {
         makeImg.hide();
         makeImg.change(clickBut.dataset.to);
