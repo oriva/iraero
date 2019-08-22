@@ -329,10 +329,10 @@ const onWheel = (e => {
     let delta = e.deltaY || e.detail || e.wheelDelta;
     if (!disabledEvents && document.querySelector('.popup').classList.contains('hide')) {
         let batya = document.querySelector('.footer-dots .active').parentNode;
-        if (delta > 0) {
+        if (delta < 0) {
             if (batya.previousElementSibling)
                 changeDots(batya.previousElementSibling.querySelector('a'));
-        } else if (delta < 0) {
+        } else if (delta > 0) {
             if (batya.nextElementSibling)
                 changeDots(batya.nextElementSibling.querySelector('a'));
         }
