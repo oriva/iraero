@@ -50,6 +50,7 @@ body
       color: #fff
       background-color: #59A9E3
       border: 0
+      text-decoration: none
       cursor: pointer
       border-radius: 5px
       padding: 10px 50px
@@ -140,23 +141,31 @@ body
   flex: 1
   min-width: 250px
   margin: 0
+  position: relative
+  bottom: -3px
   & > li:first-child
     padding-left: 0
   & > li
     flex: none
-    padding-left: 40px
+    padding-left: 30px
     a
       display: block
       box-sizing: border-box
-      width: 7px
-      height: 7px
-      border-radius: 50%
-      background: #FFF
+      width: 17px
+      height: 17px
       opacity: .5
       text-indent: 100%
       overflow: hidden
       white-space: nowrap
       transition: .2s ease-in-out
+      &::after
+        content: ''
+        display: block
+        height: 50%
+        width: 50%
+        background-color: #fff
+        border-radius: 50%
+        transform: translate(50%, 50%)
       &:hover
         transform: scale(1.2)
       &.active
@@ -174,5 +183,8 @@ body
     -ms-flex: 0 0 100%
     flex: 0 0 100%
 
+  .footer-dots
+    padding-left: 0
+
   .fn-tb
-    margin-bottom: 30px
+    margin-bottom: 10px

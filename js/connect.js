@@ -1,6 +1,8 @@
 let disabledEvents = false;
 let from = 1;
 let toForListener = 2;
+const imageBlock = document.querySelectorAll('.main-content__img');
+const videoBlock = document.querySelector('.main-content__video');
 
 document.addEventListener('DOMContentLoaded', () => {
     popupDots.showDots();

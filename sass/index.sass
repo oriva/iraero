@@ -14,6 +14,9 @@ body
   --left-padding: 130px
   --bottom: 60px
 
+.content
+  height: 100vh
+
 @media (max-width: 1600px)
   body
     font-size: 14px
@@ -24,6 +27,7 @@ body
   body
     --left-padding: 75px
     --bottom: 30px
+
 
 .panorama
   position: absolute
@@ -49,6 +53,7 @@ body
   top: 40px
   left: var(--left-padding)
   img
+    display: block
     width: 130px
 
 .main-content
@@ -88,6 +93,13 @@ body
     position: absolute
     z-index: 2
 
+@media (max-width: 768px)
+  .header img
+    width: 100px
+
+  .main-content
+    display: none
+
 @media (max-width: 1979.99px)
   .main-content
     &__img
@@ -117,3 +129,4 @@ body
 @import "sharing"
 @import "popup"
 @import "footer"
+@import "mobile"

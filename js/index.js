@@ -3,8 +3,15 @@
 // let toForListener = 2;
 // let disabledEvents = false;
 let forListenerVideo = '';
-const imageBlock = document.querySelectorAll('.main-content__img');
-const videoBlock = document.querySelector('.main-content__video');
+
+if(isPc)
+    document.addEventListener('DOMContentLoaded', () => {
+        if (window.innerWidth < 1980) {
+            videoBlock.src = 'video/fullHD/' + getLink('video', 1);
+        } else {
+            videoBlock.src = 'video/4k/' + getLink('video', 1);
+        }
+    });
 
 document.querySelector('.panorama').addEventListener('transitionend', () => {
     panorama.monitoring();
@@ -51,13 +58,7 @@ document.addEventListener('keydown', e=>{
     }
 });
 
-document.addEventListener('DOMContentLoaded', () => {
-    if (window.innerWidth < 1980) {
-        videoBlock.src = 'video/fullHD/' + getLink('video', 1);
-    } else {
-        videoBlock.src = 'video/4k/' + getLink('video', 1);
-    }
-});
+
 
 
 // Только для картинок

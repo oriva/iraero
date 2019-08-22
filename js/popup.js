@@ -1,20 +1,48 @@
 const popup = document.querySelector('.popup');
-const popupBg = document.querySelector('.popup__bg');
-const curItem = document.querySelector('.popup__cursor');
+let popupBg = document.querySelector('.popup__bg');
+let curItem = document.querySelector('.popup__cursor');
+
+
+const listenerPopup = ()=>{
+    curItem = popupBg.querySelector('.popup__cursor');
+    popupBg.addEventListener('mouseout', () => {
+        curItem.classList.add('hide');
+    });
+    popupBg.addEventListener('mouseover', (e) => {
+        curItem.classList.remove('hide');
+        curItem.style.top = e.clientY + 'px';
+        curItem.style.left = e.clientX + 'px';
+    });
+
+    popupBg.addEventListener('mousemove', (e) => {
+        if (!curItem.classList.contains('hide')) {
+            curItem.style.top = e.clientY + 'px';
+            curItem.style.left = e.clientX + 'px';
+        }
+    });
+};
 
 
 const popupContent = (number) => {
     let content = '';
     switch (number) {
         case 1:
-            content = '<img src="img/popup/1.jpg" alt="" class="popup-content__img-100">' +
+            content = '<div class="popup-content__mob">' +
+                '<img src="img/iraero-logo_blue.png" alt="">' +
+                '<div class="popup-content__mob-closed"></div>' +
+                '</div>' +
+                '<img src="img/popup/1.jpg" alt="" class="popup-content__img-100">' +
                 '                <div class="popup-content__padding-v">' +
                 '                    <span class="popup-content__title">Sukhoi Superjet 100</span>' +
                 '                    <p>Новый стандарт безопасности ваших полетов. <br>Российским инженерам-конструкторам удалось добиться невероятных успехов в сфере пассажирских авиационных перевозок. <br><br>Новая модель российского авиастроения получила название Sukhoi Superjet 100 и заслужила признание во всем мире среди конструкторов и пилотов, как надежный и безопасный самолет. <br><br>Ведущие компании мира, такие как ArabicAirlines, Norway, Boieng включили данную модель самолета в свои парки, а компания ИрАэро и вовсе сделала SSJ-100 одним из своих основных самолетов.</p>' +
                 '                </div>';
             break;
         case 4:
-            content = '<img src="img/popup/economic/1.jpg" alt="" class="popup-content__img-100">' +
+            content = '<div class="popup-content__mob">' +
+                '<img src="img/iraero-logo_blue.png" alt="">' +
+                '<div class="popup-content__mob-closed"></div>' +
+                '</div>' +
+                '<img src="img/popup/economic/1.jpg" alt="" class="popup-content__img-100">' +
                 '<div class="popup-content__padding-v">' +
                 '<span class="popup-content__title">Экономика</span>' +
                 '<p>Вместимость пассажиров: 97 кресел (с учетом бизнес класса) и 100 кресел в одноклассной компоновке' +
@@ -24,7 +52,11 @@ const popupContent = (number) => {
                 '</div>';
             break;
         case 5:
-            content = '<img src="img/popup/engine/1.jpg" alt="" class="popup-content__img-100">' +
+            content = '<div class="popup-content__mob">' +
+                '<img src="img/iraero-logo_blue.png" alt="">' +
+                '<div class="popup-content__mob-closed"></div>' +
+                '</div>' +
+                '<img src="img/popup/engine/1.jpg" alt="" class="popup-content__img-100">' +
                 '<div class="popup-content__padding-v">' +
                 '<span class="popup-content__title">Двигатели</span>' +
                 '<strong>Производители:</strong><img src="img/popup/engine/creators.jpg" alt="" class="popup-content__img-100">' +
@@ -42,7 +74,11 @@ const popupContent = (number) => {
                 '</div>';
             break;
         case 6:
-            content = '<img src="img/popup/2.jpg" alt="" class="popup-content__img-100">' +
+            content =  '<div class="popup-content__mob">' +
+                '<img src="img/iraero-logo_blue.png" alt="">' +
+                '<div class="popup-content__mob-closed"></div>' +
+                '</div>' +
+                '<img src="img/popup/2.jpg" alt="" class="popup-content__img-100">' +
                 '                <div class="popup-content__padding-v">' +
                 '                    <span class="popup-content__title">Шасси и тормозная система</span>' +
                 '                    <p>На всех самолётах семейства RRJ используется убирающиеся шасси, с передней управляемой опорой и тормозными основными опорами.' +
@@ -57,7 +93,11 @@ const popupContent = (number) => {
                 '                </div>';
             break;
         case 9:
-            content = '<img src="img/popup/avionics/1.jpg" alt="" class="popup-content__img-100">' +
+            content = '<div class="popup-content__mob">' +
+                '<img src="img/iraero-logo_blue.png" alt="">' +
+                '<div class="popup-content__mob-closed"></div>' +
+                '</div>' +
+                '<img src="img/popup/avionics/1.jpg" alt="" class="popup-content__img-100">' +
                 '<div class="popup-content__padding-v">' +
                 '<span class="popup-content__title">Авионика</span>' +
                 '<p><strong>Система раннего предупреждения о столкновении T2CAS (разработчик и производитель — компания ACSS, США)</strong><br>' +
@@ -73,7 +113,11 @@ const popupContent = (number) => {
                 '</div>';
             break;
         case 8:
-            content = '<img src="img/popup/constructions/1.jpg" alt="" class="popup-content__img-100">' +
+            content = '<div class="popup-content__mob">' +
+                '<img src="img/iraero-logo_blue.png" alt="">' +
+                '<div class="popup-content__mob-closed"></div>' +
+                '</div>' +
+                '<img src="img/popup/constructions/1.jpg" alt="" class="popup-content__img-100">' +
                 '<div class="popup-content__padding-v">' +
                 '<span class="popup-content__title">особенности конструкции</span>' +
                 '<p>Конструкция самолёта отвечает специфике требований авиакомпаний России, СНГ, западных стран и соответствует требованиям АП-25, FAR-25, JAR-25. Самолеты семейства Superjet 100 удовлетворяют требованиям по уровню шума, создаваемого самолетом на местности по Главе 4 стандарта ICAO и FAR 36 части 4, вступившим в силу в 2006 году. Самолёты SSJ удовлетворяют требованиям 99% аэродромов класса А, Б и В России и СНГ.<br>' +
@@ -86,21 +130,32 @@ const popupContent = (number) => {
                 '</div>';
             break;
         case 7:
-            content = '<img src="img/popup/specifications/1.jpg" alt="" class="popup-content__img-100">' +
+            content = '<div class="popup-content__mob">' +
+                '<img src="img/iraero-logo_blue.png" alt="">' +
+                '<div class="popup-content__mob-closed"></div>' +
+                '</div>' +
+                '<img src="img/popup/specifications/1.jpg" alt="" class="popup-content__img-100">' +
                 '<div class="popup-content__padding-v">' +
                 '<span class="popup-content__title">Технические характеристики</span>' +
                 '<p><img src="img/popup/specifications/2.jpg" alt="" class="popup-content__img-100"></p>' +
                 '</div>';
             break;
         case 11:
-            content = '<img src="img/popup/tour/pre1.jpg" alt="" class="popup-content__img-100">' +
+            content = '<div class="popup-content__mob">' +
+                '<img src="img/iraero-logo_blue.png" alt="">' +
+                '<div class="popup-content__mob-closed"></div>' +
+                '<img src="img/popup/tour/pre1.jpg" alt="" class="popup-content__img-100">' +
                 '<div class="popup-content__padding-v">' +
                 '<span class="popup-content__title">Общие характеристики</span>' +
                 '<img src="img/popup/tour/table1.jpg" alt="" class="popup-content__img-100">' +
                 '</div>';
             break;
         case 12:
-            content = '<img src="img/popup/tour/2.jpg" alt="" class="popup-content__img-100">' +
+            content = '<div class="popup-content__mob">' +
+                '<img src="img/iraero-logo_blue.png" alt="">' +
+                '<div class="popup-content__mob-closed"></div>' +
+                '</div>' +
+                '<img src="img/popup/tour/2.jpg" alt="" class="popup-content__img-100">' +
                 '<div class="popup-content__padding-v">' +
                 '<span class="popup-content__title">Общие характеристики</span>' +
                 '<p><strong>Более широкие проходы</strong>' +
@@ -115,12 +170,14 @@ const popupContent = (number) => {
                 '</div>';
             break;
     }
+    content = '<div class="popup-content">' + content + '</div>';
     return content;
 };
 
 const popupWindows = (() => {
     const tourBlock = document.querySelector('.tour-3d');
     const removeTourBlock = (item) => {
+        disabledEvents = false;
         item.innerHTML = '';
         item.removeEventListener('transitionend', removeTourBlock);
     };
@@ -129,23 +186,31 @@ const popupWindows = (() => {
         tourBlock.classList.remove('hide');
         tourBlock.addEventListener('click', e => {
             if (e.target.closest('.tour-3d__close')) {
-                tourBlock.addEventListener('transitionend', removeTourBlock(tourBlock));
+                tourBlock.addEventListener('transitionend', removeTourBlock(tourBlock.querySelector('.tour-3d__content')));
                 tourBlock.classList.add('hide');
             }
         });
     };
     const createPopup = num => {
+        disabledEvents = true;
+        let bg = document.createElement('div');
+        bg.className = 'popup__bg';
+        bg.innerHTML = '<div class="popup__cursor hide" style=""></div>';
         let domElem = document.createElement('div');
-        domElem.className = 'popup-content';
+        domElem.className = 'popup__block-content';
         domElem.innerHTML = popupContent(num);
         // popupDotsAnimate.monitoring(domElem);
-        document.querySelector('.popup__block-content').innerHTML = '';
-        document.querySelector('.popup__block-content').appendChild(domElem);
+        document.querySelector('.popup').innerHTML = '';
+        document.querySelector('.popup').appendChild(bg);
+        document.querySelector('.popup').appendChild(domElem);
+        popupBg = document.querySelector('.popup__bg');
+        listenerPopup();
         setTimeout(() => {
             popupWindows.show()
         }, 10);
     };
     const createGallery = () => {
+        disabledEvents = true;
         tourBlock.querySelector('.tour-3d__content').innerHTML = '<div class="owl-carousel owl-gallery">\n' +
             '  <div><img src="img/popup/gallery/1.jpg" alt=""></div>\n' +
             '  <div><img src="img/popup/gallery/2.jpg" alt=""></div>\n' +
@@ -161,21 +226,26 @@ const popupWindows = (() => {
             '  <div><img src="img/popup/gallery/12.jpg" alt=""></div>\n' +
             '</div>';
         setTimeout(()=>{
-            $(".owl-carousel").owlCarousel({
+            $(".owl-gallery").owlCarousel({
                 items: 1,
                 dots: false,
-                nav: true
+                nav: true,
+                loop: true
             });
+            $(".owl-gallery .owl-prev").html('<div class="owl-gallery__arrow-block"><img src="img/popup/arrow-left.svg" alt=""></div>');
+            $(".owl-gallery .owl-next").html('<div class="owl-gallery__arrow-block"><img src="img/popup/arrow-right.svg" alt=""></div>');
+
         },1);
         tourBlock.classList.remove('hide');
         tourBlock.addEventListener('click', e => {
             if (e.target.closest('.tour-3d__close')) {
-                tourBlock.addEventListener('transitionend', removeTourBlock(tourBlock.querySelector('.tour-3d__content')));
                 tourBlock.classList.add('hide');
+                tourBlock.addEventListener('transitionend', removeTourBlock(tourBlock.querySelector('.tour-3d__content')));
             }
         });
     };
     const createVideo = () => {
+        disabledEvents = true;
         tourBlock.querySelector('.tour-3d__content').innerHTML = '<video src="video/popup-video.mp4" controls></video>';
         tourBlock.classList.remove('hide');
         tourBlock.addEventListener('click', e => {
@@ -186,10 +256,14 @@ const popupWindows = (() => {
         });
     };
     const togglePopup = action => {
-        if (action === 'show')
+        if (action === 'show') {
+            disabledEvents = true;
             popup.classList.remove('hide');
-        else
+        } else {
+            disabledEvents = false;
             popup.classList.add('hide');
+            // document.querySelector('.popup-content').scrollIntoView({inline: start});
+        }
     };
     return {
         show: () => {
@@ -337,7 +411,8 @@ const popupDotsAnimate = (() => {
     }
 })();
 
-popupDots.createDots(from);
+if(isPc)
+    popupDots.createDots(from);
 
 document.addEventListener('click', (e) => {
     let event = e.target;
@@ -346,20 +421,5 @@ document.addEventListener('click', (e) => {
     }
     if (event.closest('.dots__item-container')) {
         popupWindows.change(event.closest('.dots__item-container').dataset.id);
-    }
-});
-popupBg.addEventListener('mouseout', () => {
-    curItem.classList.add('hide');
-});
-popupBg.addEventListener('mouseover', (e) => {
-    curItem.classList.remove('hide');
-    curItem.style.top = e.clientY + 'px';
-    curItem.style.left = e.clientX + 'px';
-});
-
-popupBg.addEventListener('mousemove', (e) => {
-    if (!curItem.classList.contains('hide')) {
-        curItem.style.top = e.clientY + 'px';
-        curItem.style.left = e.clientX + 'px';
     }
 });

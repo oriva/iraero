@@ -27,7 +27,7 @@
     &:hover
       transform: scale(1.1)
 
-.owl-gallery
+.owl-carousel
   height: 100vh
   & *
     height: 100%
@@ -38,7 +38,29 @@
     bottom: 0
     right: 0
     height: auto
-    button
+    display: flex
+    box-sizing: border-box
+    & *
+      box-sizing: border-box
+
+.owl-gallery
+  &__arrow-block
+    width: 60px
+    height: 60px
+    background: rgba(34, 70, 192, 0.7)
+    -webkit-border-radius: 50%
+    -moz-border-radius: 50%
+    border-radius: 50%
+    margin-right: 20px
+    margin-bottom: 20px
+    transition: .3s
+    &:hover
+      transform: scale(1.1)
+    img
+      display: block
+      width: 100%
+      object-fit: contain
+      padding: 20px
 
 
 .popup
@@ -96,8 +118,10 @@
   min-height: 100%
   top: 0
   right: 0
-  padding-bottom: 2em
+  padding-bottom: 4em
   transition: .3s
+  &__mob
+    display: none
   p
     font-weight: 100
     padding-right: 80px
