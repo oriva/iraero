@@ -17,6 +17,25 @@ body
     content: url(../img/fullHD/1.jpg) url(../img/fullHD/2.jpg) url(../img/fullHD/3.jpg) url(../img/fullHD/4.jpg) url(../img/fullHD/5.jpg) url(../img/4k/1.jpg) url(../img/4k/2.jpg) url(../img/4k/3.jpg) url(../img/4k/4.jpg) url(../img/4k/5.jpg)
     display: none
 
+.preloader
+  position: absolute
+  top: 0
+  left: 0
+  z-index: 99
+  width: 100%
+  height: 100%
+  background-color: #fff
+  transition: .8s ease-in-out
+  video
+    display: block
+    width: 100%
+    height: 100%
+    position: relative
+  &.hide
+    opacity: 0
+    pointer-events: none
+
+
 .content
   height: 100vh
 

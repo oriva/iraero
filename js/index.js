@@ -15,6 +15,9 @@ loadFunction = (links)=>{
     req[videoCounterForLoad].onload = function() {
         if (this.status === 200) {
             videoCounterForLoad++;
+            if(videoCounterForLoad===4) {
+                document.querySelector('.preloader').classList.add('hide');
+            }
         }
     };
     req[videoCounterForLoad].onerror = function() {
