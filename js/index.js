@@ -4,6 +4,36 @@
 // let disabledEvents = false;
 let forListenerVideo = '';
 
+let videoCounterForLoad = 0;
+let req = [];
+loadFunction = (links)=>{
+    console.log(links);
+    req[videoCounterForLoad] = new XMLHttpRequest();
+    req[videoCounterForLoad].open('GET', links, true);
+    req[videoCounterForLoad].responseType = 'blob';
+
+    req[videoCounterForLoad].onload = function() {
+        if (this.status === 200) {
+            videoCounterForLoad++;
+        }
+    };
+    req[videoCounterForLoad].onerror = function() {
+        console.log('Ошибка');
+    };
+    req[videoCounterForLoad].send();
+};
+if (window.innerWidth < 1980) {
+    ['video/4k/tr1.mp4', 'video/4k/tr2.mp4', 'video/4k/tr3.mp4', 'video/4k/tr4.mp4'].forEach((item)=>{
+        loadFunction(item);
+    });
+} else {
+    ['video/fullHD/tr1.mp4', 'video/fullHD/tr2.mp4', 'video/fullHD/tr3.mp4', 'video/fullHD/tr4.mp4'].forEach((item)=>{
+        loadFunction(item);
+    });
+}
+
+
+
 if(isPc)
     document.addEventListener('DOMContentLoaded', () => {
         if (window.innerWidth < 1980) {
