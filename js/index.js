@@ -3,9 +3,9 @@
 // let toForListener = 2;
 // let disabledEvents = false;
 let forListenerVideo = '';
-
 let videoCounterForLoad = 0;
 let req = [];
+disabledEvents = true;
 loadFunction = (links)=>{
     console.log(links);
     req[videoCounterForLoad] = new XMLHttpRequest();
@@ -17,6 +17,7 @@ loadFunction = (links)=>{
             videoCounterForLoad++;
             if(videoCounterForLoad===4) {
                 document.querySelector('.preloader').classList.add('hide');
+                disabledEvents = false;
             }
         }
     };
