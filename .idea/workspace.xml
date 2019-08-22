@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3ae4d242-ba8a-495e-af7c-519e5c584cea" name="Default Changelist" comment="" />
+    <list default="true" id="3ae4d242-ba8a-495e-af7c-519e5c584cea" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/index.js" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -51,7 +53,7 @@
           <entry key="css" value="11" />
           <entry key="gitignore" value="3" />
           <entry key="html" value="1525" />
-          <entry key="js" value="9800" />
+          <entry key="js" value="9819" />
           <entry key="php" value="5" />
           <entry key="sass" value="4936" />
         </counts>
@@ -60,7 +62,7 @@
         <counts>
           <entry key="CSS" value="12" />
           <entry key="HTML" value="1615" />
-          <entry key="JavaScript" value="9709" />
+          <entry key="JavaScript" value="9728" />
           <entry key="PHP" value="5" />
           <entry key="PLAIN_TEXT" value="3" />
           <entry key="Sass" value="4936" />
@@ -117,8 +119,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="181">
-              <caret line="8" column="25" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
+            <state relative-caret-position="317">
+              <caret line="159" column="16" selection-start-line="159" selection-start-column="16" selection-end-line="159" selection-end-column="16" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -166,7 +168,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>isPc</find>
       <find>body</find>
       <find>owl-dots</find>
       <find>__buttons</find>
@@ -196,6 +197,7 @@
       <find>img</find>
       <find>outerWi</find>
       <find>video</find>
+      <find>image</find>
     </findStrings>
     <replaceStrings>
       <replace>&lt;br&gt;</replace>
@@ -361,12 +363,12 @@
       <workItem from="1566354519810" duration="78000" />
       <workItem from="1566354622915" duration="3144000" />
       <workItem from="1566364619966" duration="4000" />
-      <workItem from="1566364643320" duration="20232000" />
+      <workItem from="1566364643320" duration="20693000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="170402000" />
+    <option name="totallyTimeSpent" value="170863000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
@@ -588,13 +590,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/popup.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="145" column="68" selection-start-line="145" selection-start-column="68" selection-end-line="145" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sass/index.sass">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="421">
@@ -602,10 +597,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/js/popup.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="145" column="68" selection-start-line="145" selection-start-column="68" selection-end-line="145" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/js/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
-          <caret line="8" column="25" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
+        <state relative-caret-position="317">
+          <caret line="159" column="16" selection-start-line="159" selection-start-column="16" selection-end-line="159" selection-end-column="16" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
