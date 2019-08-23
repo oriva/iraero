@@ -6,25 +6,7 @@ let forListenerVideo = '';
 let videoCounterForLoad = 0;
 let req = [];
 disabledEvents = true;
-loadFunction = (links)=>{
-    req[videoCounterForLoad] = new XMLHttpRequest();
-    req[videoCounterForLoad].open('GET', links, true);
-    req[videoCounterForLoad].responseType = 'blob';
 
-    req[videoCounterForLoad].onload = function() {
-        if (this.status === 200) {
-            videoCounterForLoad++;
-            if(videoCounterForLoad===8) {
-                document.querySelector('.preloader').classList.add('hide');
-                disabledEvents = false;
-            }
-        }
-    };
-    req[videoCounterForLoad].onerror = function() {
-        console.log('Ошибка');
-    };
-    req[videoCounterForLoad].send();
-};
 if (window.innerWidth < 1980) {
     ['video/4k/tr1.mp4', 'video/4k/tr2.mp4', 'video/4k/tr3.mp4', 'video/4k/tr4.mp4', 'img/4k/1.jpg', 'img/4k/2.jpg', 'img/4k/3.jpg', 'img/4k/4.jpg', 'img/4k/5.jpg'].forEach((item)=>{
         loadFunction(item);
