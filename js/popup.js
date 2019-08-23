@@ -222,11 +222,9 @@ const popupWindows = (() => {
             '  <div><img src="img/popup/gallery/2.jpg" alt=""></div>\n' +
             '  <div><img src="img/popup/gallery/1.jpg" alt=""></div>\n' +
             '  <div><img src="img/popup/gallery/3.jpg" alt=""></div>\n' +
-            '  <div><img src="img/popup/gallery/4.jpg" alt=""></div>\n' +
             '  <div><img src="img/popup/gallery/5.jpg" alt=""></div>\n' +
             '  <div><img src="img/popup/gallery/6.jpg" alt=""></div>\n' +
             '  <div><img src="img/popup/gallery/7.jpg" alt=""></div>\n' +
-            '  <div><img src="img/popup/gallery/8.jpg" alt=""></div>\n' +
             '  <div><img src="img/popup/gallery/9.jpg" alt=""></div>\n' +
             '  <div><img src="img/popup/gallery/11.jpg" alt=""></div>\n' +
             '  <div><img src="img/popup/gallery/12.jpg" alt=""></div>\n' +
