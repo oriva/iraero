@@ -205,23 +205,30 @@ const panorama = (() => {
     const pano = document.querySelector('.panorama');
     let listenImageChange = false;
     const showAnimation = number => {
+        console.log(number);
         makeVideo.change(parseInt(number));
         makeImg.change(parseInt(number));
         text.change(parseInt(number));
         popupDots.showDots();
     };
     (() => {
-        imageBlock[1].addEventListener("load", () => {
+        let eventImg = imageBlock[0];
+        if (window.innerWidth > 1980) {
+            eventImg = imageBlock[1];
+        }
+        eventImg.addEventListener("load", () => {
             setTimeout(() => {
                 if (listenImageChange) {
                     panorama.hide();
                 }
             }, 5);
-
         })
     })();
     return {
         monitoring: () => {
+            console.log('Мы в мониторинге');
+            console.log(!pano.classList.contains('hide'));
+            console.log(!disabledEvents);
             if (!disabledEvents) {
                 return false;
             }
