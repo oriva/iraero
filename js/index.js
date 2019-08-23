@@ -26,11 +26,11 @@ loadFunction = (links)=>{
     req[videoCounterForLoad].send();
 };
 if (window.innerWidth < 1980) {
-    ['video/4k/tr1.mp4', 'video/4k/tr2.mp4', 'video/4k/tr3.mp4', 'video/4k/tr4.mp4', 'img/4k/1.png', 'img/4k/2.png', 'img/4k/3.png', 'img/4k/4.png', 'img/4k/5.png'].forEach((item)=>{
+    ['video/4k/tr1.mp4', 'video/4k/tr2.mp4', 'video/4k/tr3.mp4', 'video/4k/tr4.mp4', 'img/4k/1.jpg', 'img/4k/2.jpg', 'img/4k/3.jpg', 'img/4k/4.jpg', 'img/4k/5.jpg'].forEach((item)=>{
         loadFunction(item);
     });
 } else {
-    ['video/fullHD/tr1.mp4', 'video/fullHD/tr2.mp4', 'video/fullHD/tr3.mp4', 'video/fullHD/tr4.mp4', 'img/fullHD/1.png', 'img/fullHD/2.png', 'img/fullHD/3.png', 'img/fullHD/4.png', 'img/fullHD/5.png'].forEach((item)=>{
+    ['video/fullHD/tr1.mp4', 'video/fullHD/tr2.mp4', 'video/fullHD/tr3.mp4', 'video/fullHD/tr4.mp4', 'img/fullHD/1.jpg', 'img/fullHD/2.jpg', 'img/fullHD/3.jpg', 'img/fullHD/4.jpg', 'img/fullHD/5.jpg'].forEach((item)=>{
         loadFunction(item);
     });
 }
@@ -94,19 +94,19 @@ const getLink = (type, number) => {
     if (type === 'image') {
         switch (number) {
             case 1:
-                link = '1.png';
+                link = '1.jpg';
                 break;
             case 2:
-                link = '2.png';
+                link = '2.jpg';
                 break;
             case 3:
-                link = '3.png';
+                link = '3.jpg';
                 break;
             case 4:
-                link = '4.png';
+                link = '4.jpg';
                 break;
             case 5:
-                link = '5.png';
+                link = '5.jpg';
                 break;
         }
     } else {
