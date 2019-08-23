@@ -67,7 +67,7 @@ const popupContent = (number) => {
                 '<div class="popup-content__super-block popup-content__padding-l">' +
                 '   <img src="img/popup/engine/3.jpg" alt="" class="popup-content__img-100">' +
                 '   <img src="img/popup/engine/4.jpg" alt="" class="popup-content__img-100">' +
-                '   <img src="img/popup/engine/4-mob.jpg" alt="" class="popup-content__img-100 popup-content__mob-image">' +
+                '   <img src="img/popup/engine/4-mob.jpg" alt="" class="popup-content__mob-image">' +
                 '</div>' +
                 '<div class="popup-content__padding-v">' +
                 '<p><br><br>Система управления двигателями состоит из системы управления режимом работы двигателей, электронной системы управления двигателями и электрической системы управления остановом двигателей.' +
