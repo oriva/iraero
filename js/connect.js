@@ -4,6 +4,10 @@ let toForListener = 2;
 const imageBlock = document.querySelectorAll('.main-content__img');
 const videoBlock = document.querySelector('.main-content__video');
 
+let isPc = (()=>{
+    return document.body.clientWidth > 768;
+})();
+
 document.addEventListener('DOMContentLoaded', () => {
     popupDots.showDots();
     if (window.innerWidth < 1980) {
@@ -11,11 +15,14 @@ document.addEventListener('DOMContentLoaded', () => {
     } else if(window.innerWidth > 768) {
         videoBlock.src = 'video/4k/tr1.mp4';
     }
+
+    if(window.innerWidth < 768) {
+        document.querySelector('.preloader').classList.add('hide');
+    }
 });
 
-let isPc = (()=>{
-    return document.body.clientWidth > 768;
-})();
+
+
 
 const connectScript = (() => {
     const start = (script)=>{

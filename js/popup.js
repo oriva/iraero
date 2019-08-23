@@ -4,6 +4,7 @@ let curItem = document.querySelector('.popup__cursor');
 
 
 const listenerPopup = ()=>{
+
     curItem = popupBg.querySelector('.popup__cursor');
     popupBg.addEventListener('mouseout', () => {
         curItem.classList.add('hide');
@@ -45,9 +46,9 @@ const popupContent = (number) => {
                 '<img src="img/popup/economic/1.jpg" alt="" class="popup-content__img-100">' +
                 '<div class="popup-content__padding-v">' +
                 '<span class="popup-content__title">Экономика</span>' +
-                '<p>Вместимость пассажиров: 97 кресел (с учетом бизнес класса) и 100 кресел в одноклассной компоновке' +
-                '<br><br>Дальность полета: 4,878 км' +
-                '<br><br>Максимальный взлетный вес: 49450 кг</p>' +
+                '<p><strong>Вместимость пассажиров:</strong> 97 кресел (с учетом бизнес класса) и 100 кресел в одноклассной компоновке' +
+                '<br><br><strong>Дальность полета:</strong> 4,878 км' +
+                '<br><br><strong>Максимальный взлетный вес:</strong> 49450 кг</p>' +
                 '<img src="img/popup/economic/2.jpg" alt="" class="popup-content__img-100">' +
                 '</div>';
             break;
@@ -63,9 +64,13 @@ const popupContent = (number) => {
                 '<p>Два турбовентиляторных воздушно-реактивных двигателя нового поколения SM-146, разработанного совместно французской фирмой Snecma Moteurs и российским научно- производственным объединением «Сатурн» (PowerJet ), вспомогательной силовой установки (ВСУ) фирмы Honeywell RE-220 (США), унифицированных мотогондол, топливной и масляной систем, системы управления двигателями, включая комплексную систему контроля и диагностики, а также устройств стыковки и взаимодействия силовой установки с планером и другими бортовыми системами самолёта.</p>' +
                 '</div>' +
                 '<img src="img/popup/engine/2.jpg" alt="" class="popup-content__img-100">' +
-                '<img src="img/popup/engine/3.jpg" alt="" class="popup-content__img-100 popup-content__padding-l">' +
+                '<div class="popup-content__super-block popup-content__padding-l">' +
+                '   <img src="img/popup/engine/3.jpg" alt="" class="popup-content__img-100">' +
+                '   <img src="img/popup/engine/4.jpg" alt="" class="popup-content__img-100">' +
+                '   <img src="img/popup/engine/4-mob.jpg" alt="" class="popup-content__img-100 popup-content__mob-image">' +
+                '</div>' +
                 '<div class="popup-content__padding-v">' +
-                '<p>Система управления двигателями состоит из системы управления режимом работы двигателей, электронной системы управления двигателями и электрической системы управления остановом двигателей.' +
+                '<p><br><br>Система управления двигателями состоит из системы управления режимом работы двигателей, электронной системы управления двигателями и электрической системы управления остановом двигателей.' +
                 '<br><br>На центральном пульте пилотов расположен пульт управления двигателями' +
                 '<br>Режим работы двигателя контролируется по показаниям индикаторов комплексной системы электронной индикации и сигнализации.<br><br>Автоматическое управление двигателями осуществляется вычислительной системой автомата управления тягой.<br><br>В рукоятках РУД вмонтированы микровыключатели, которые предназначены для переключения автоматического управления двигателями на ручное.<br><br>Система фиксаторов обеспечивает исключение самопроизвольного включения режимов работы двигателей.<br><br>Электронная система управления двигателем представляет собой электронную систему с полной ответственностью (FADEC).<br><br>FADEC, взаимодействуя с самолетными системами, обеспечивает оптимальное регулирование режимами двигателя во всех условиях эксплуатации, а также контроль над датчиками и устройствами двигателя с выдачей необходимой информации для индикации в кабине экипажа, выдачу необходимой информации в системы регистрации и технического обслуживания.</p>' +
                 '<div class="popup-content__line"></div>' +
@@ -157,7 +162,7 @@ const popupContent = (number) => {
                 '</div>' +
                 '<img src="img/popup/tour/2.jpg" alt="" class="popup-content__img-100">' +
                 '<div class="popup-content__padding-v">' +
-                '<span class="popup-content__title">Общие характеристики</span>' +
+                '<span class="popup-content__title">Салон</span>' +
                 '<p><strong>Более широкие проходы</strong>' +
                 '<br><br>SSJ100 является единственным самолетов в своем классе с проходами более полуметра, что позволяет ускорить посадку и высадку пассажиров. Летный персонал может с легкостью передвигаться по салону, при этом остается достаточно пространства для обеспечения комфорта пассажиров.</p>' +
                 '<img src="img/popup/tour/pre1.jpg" alt="" class="popup-content__img-100">' +
@@ -213,8 +218,9 @@ const popupWindows = (() => {
     const createGallery = () => {
         disabledEvents = true;
         tourBlock.querySelector('.tour-3d__content').innerHTML = '<div class="owl-carousel owl-gallery">\n' +
-            '  <div><img src="img/popup/gallery/1.jpg" alt=""></div>\n' +
+            '  <div><img src="img/popup/gallery/10.jpg" alt=""></div>\n' +
             '  <div><img src="img/popup/gallery/2.jpg" alt=""></div>\n' +
+            '  <div><img src="img/popup/gallery/1.jpg" alt=""></div>\n' +
             '  <div><img src="img/popup/gallery/3.jpg" alt=""></div>\n' +
             '  <div><img src="img/popup/gallery/4.jpg" alt=""></div>\n' +
             '  <div><img src="img/popup/gallery/5.jpg" alt=""></div>\n' +
@@ -222,7 +228,6 @@ const popupWindows = (() => {
             '  <div><img src="img/popup/gallery/7.jpg" alt=""></div>\n' +
             '  <div><img src="img/popup/gallery/8.jpg" alt=""></div>\n' +
             '  <div><img src="img/popup/gallery/9.jpg" alt=""></div>\n' +
-            '  <div><img src="img/popup/gallery/10.jpg" alt=""></div>\n' +
             '  <div><img src="img/popup/gallery/11.jpg" alt=""></div>\n' +
             '  <div><img src="img/popup/gallery/12.jpg" alt=""></div>\n' +
             '</div>';
@@ -243,7 +248,7 @@ const popupWindows = (() => {
                 tourBlock.classList.add('hide');
                 setTimeout(()=>{
                     tourBlock.addEventListener('transitionend', removeTourBlock(tourBlock.querySelector('.tour-3d__content')));
-                },1);
+                },800);
             }
         });
     };
@@ -253,8 +258,10 @@ const popupWindows = (() => {
         tourBlock.classList.remove('hide');
         tourBlock.addEventListener('click', e => {
             if (e.target.closest('.tour-3d__close')) {
-                tourBlock.addEventListener('transitionend', removeTourBlock(tourBlock.querySelector('.tour-3d__content')));
                 tourBlock.classList.add('hide');
+                setTimeout(()=>{
+                    tourBlock.addEventListener('transitionend', removeTourBlock(tourBlock.querySelector('.tour-3d__content')));
+                },800);
             }
         });
     };
@@ -419,7 +426,7 @@ if(isPc)
 
 document.addEventListener('click', (e) => {
     let event = e.target;
-    if (event.closest('.popup__bg')) {
+    if (event.closest('.popup__bg')||e.target.closest('.popup-content__mob-closed')) {
         popupWindows.hide();
     }
     if (event.closest('.dots__item-container')) {

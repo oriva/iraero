@@ -120,6 +120,23 @@
   right: 0
   padding-bottom: 4em
   transition: .3s
+  &__mob-image
+    display: none
+  &__super-block
+    display: flex
+    flex-wrap: wrap
+    box-sizing: border-box
+    & > *
+      object-fit: contain
+      object-position: center
+      box-sizing: border-box
+      &:nth-child(1)
+        flex: 0 0 60%
+        max-width: 60%
+      &:nth-child(2)
+        flex: 0 0 40%
+        padding-left: 70px
+        max-width: 40%
   &__mob
     display: none
   p
