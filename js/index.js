@@ -8,11 +8,11 @@ let req = [];
 disabledEvents = true;
 
 if (window.innerWidth < 1980) {
-    ['video/4k/tr1.mp4', 'video/4k/tr2.mp4', 'video/4k/tr3.mp4', 'video/4k/tr4.mp4', 'img/4k/1.jpg', 'img/4k/2.jpg', 'img/4k/3.jpg', 'img/4k/4.jpg', 'img/4k/5.jpg'].forEach((item)=>{
+    ['video/4k/tr1.mp4', 'video/4k/tr2.mp4', 'video/4k/tr3.mp4', 'video/4k/tr4.mp4', 'img/4k/1.jpg', 'img/4k/2.jpg', 'img/4k/3.jpg', 'img/4k/4.jpg', 'img/4k/5.jpg', 'img/popup/1.jpg', 'img/popup/2.jpg'].forEach((item)=>{
         loadFunction(item);
     });
 } else {
-    ['video/fullHD/tr1.mp4', 'video/fullHD/tr2.mp4', 'video/fullHD/tr3.mp4', 'video/fullHD/tr4.mp4', 'img/fullHD/1.jpg', 'img/fullHD/2.jpg', 'img/fullHD/3.jpg', 'img/fullHD/4.jpg', 'img/fullHD/5.jpg'].forEach((item)=>{
+    ['video/fullHD/tr1.mp4', 'video/fullHD/tr2.mp4', 'video/fullHD/tr3.mp4', 'video/fullHD/tr4.mp4', 'img/fullHD/1.jpg', 'img/fullHD/2.jpg', 'img/fullHD/3.jpg', 'img/fullHD/4.jpg', 'img/fullHD/5.jpg', 'img/popup/1.jpg', 'img/popup/2.jpg'].forEach((item)=>{
         loadFunction(item);
     });
 }
