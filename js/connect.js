@@ -1,4 +1,5 @@
 let disabledEvents = false;
+let isSalon = false;
 let from = 1;
 let toForListener = 2;
 const imageBlock = document.querySelectorAll('.main-content__img');

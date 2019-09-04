@@ -2,9 +2,8 @@ const popup = document.querySelector('.popup');
 let popupBg = document.querySelector('.popup__bg');
 let curItem = document.querySelector('.popup__cursor');
 
-
+// анимация крестика при открытом popup
 const listenerPopup = ()=>{
-
     curItem = popupBg.querySelector('.popup__cursor');
     popupBg.addEventListener('mouseout', () => {
         curItem.classList.add('hide');
@@ -181,11 +180,8 @@ const popupContent = (number) => {
 
 const popupWindows = (() => {
     const tourBlock = document.querySelector('.tour-3d');
-    const removeTourBlock = (item) => {
-        disabledEvents = false;
-        item.innerHTML = '';
-        item.removeEventListener('transitionend', removeTourBlock);
-    };
+
+    // функция физического создания Тура
     const createTour = () => {
         // tourBlock.querySelector('.tour-3d__content').innerHTML = '<iframe src="http://irk3d.ru/vt/ssj100/ssj100.html" frameborder="0"></iframe>';
         tourBlock.querySelector('.tour-3d__content').innerHTML = '<iframe src="3dtour/ssj100.html" frameborder="0"></iframe>';
@@ -197,6 +193,15 @@ const popupWindows = (() => {
             }
         });
     };
+
+    // функция физического удаления Тура и скрытия блока
+    const removeTourBlock = (item) => {
+        disabledEvents = false;
+        item.innerHTML = '';
+        item.removeEventListener('transitionend', removeTourBlock);
+    };
+
+    // функция физического создания popup
     const createPopup = num => {
         disabledEvents = true;
         let bg = document.createElement('div');
@@ -270,7 +275,24 @@ const popupWindows = (() => {
         } else {
             disabledEvents = false;
             popup.classList.add('hide');
-            // document.querySelector('.popup-content').scrollIntoView({inline: start});
+        }
+    };
+
+    const inSalon = (number) => {
+        const whenLoaded = ()=>{
+            console.log('imInHere');
+            if (!isSalon)
+                return false;
+            if (from!==6)
+                isSalon = false;
+            changeDots(from);
+        };
+        isSalon = true;
+        disabledEvents = true;
+        from = number;
+        if(number===6) {
+            makeVideo.change(number);
+            videoBlock.addEventListener('load', whenLoaded());
         }
     };
     return {
@@ -292,6 +314,9 @@ const popupWindows = (() => {
                 case 10:
                     createTour();
                     break;
+                case 15:
+                    inSalon(6);
+                    break;
                 default:
                     createPopup(num);
                     break;
@@ -303,7 +328,7 @@ const popupWindows = (() => {
 const popupDots = (() => {
     const dotsContainer = document.querySelector('.dots__container');
     // getPosition left,top(%), dataId
-    const getPosition = [[[41, 43, 1], [72, 43, 2], [44, 71, 3]], [[57, 49, 4], [72, 58, 5], [88, 48, 6]], [[48, 22, 7], [53, 53, 8], [82, 18, 9]], [[47, 69, 10], [63, 42, 11], [30, 42, 12]]];
+    const getPosition = [[[41, 43, 1], [72, 43, 2], [44, 71, 3]], [[57, 49, 4], [72, 58, 5], [88, 48, 6]], [[48, 22, 7], [53, 53, 8], [82, 18, 9]], [[50, 58, 15], [94, 48, 14], [26, 24, 13]], [[47, 69, 10], [63, 42, 11], [30, 42, 12]]];
     const dotElemCreate = leftTop => {
         let duru = document.createElement('div');
         duru.className = 'dots__item-container hide';
@@ -316,6 +341,11 @@ const popupDots = (() => {
                 '            </svg></div></div>';
         else if (leftTop[2] === 10)
             duru.innerHTML = '<div class="dots__item"><div class="dots__item-circle">360</div></div>';
+        else if (leftTop[2] === 15)
+            duru.innerHTML = '<div class="dots__item"><div class="dots__item-circle"><svg width="55" height="60" viewBox="0 0 55 60" fill="none" xmlns="http://www.w3.org/2000/svg">\n' +
+                '<path d="M26.4949 55.9366H11.0186C6.81263 55.9366 3.40002 52.5114 3.40002 48.318V11.0186C3.40002 6.81263 6.82522 3.40002 11.0186 3.40002H26.7468C27.6912 3.40002 28.4468 2.64446 28.4468 1.70001C28.4468 0.755559 27.6912 0 26.7468 0H11.0186C4.93632 0 0 4.94891 0 11.0186V48.318C0 54.4003 4.94891 59.3366 11.0186 59.3366H26.4949C27.4394 59.3366 28.195 58.581 28.195 57.6366C28.195 56.6921 27.4268 55.9366 26.4949 55.9366Z" fill="#2246C0"/>\n' +
+                '<path d="M54.5006 28.472L43.6961 17.6676C43.0287 17.0001 41.9583 17.0001 41.2909 17.6676C40.6235 18.335 40.6235 19.4053 41.2909 20.0727L49.1991 27.9809H14.7078C13.7634 27.9809 13.0078 28.7365 13.0078 29.6809C13.0078 30.6254 13.7634 31.3809 14.7078 31.3809H49.1991L41.2909 39.2891C40.6235 39.9565 40.6235 41.0269 41.2909 41.6943C41.6183 42.0217 42.0591 42.198 42.4872 42.198C42.9154 42.198 43.3561 42.0343 43.6835 41.6943L54.488 30.8898C55.168 30.2098 55.168 29.1269 54.5006 28.472Z" fill="#2246C0"/>\n' +
+                '</svg></div></div>';
         else
             duru.innerHTML = '<div class="dots__item"><div class="dots__item-circle"></div></div>';
         popupDotsAnimate.monitoring(duru);
@@ -328,13 +358,21 @@ const popupDots = (() => {
         let dotsItemContainer = dotsContainer.querySelectorAll('.dots__item-container');
         if (action === 'hide' && dotsItemContainer[2])
             dotsItemContainer[2].addEventListener('transitionend', () => {
+                // if(isSalon)
+                //     return false;
                 dotElemRemove();
                 if (from < 5)
                     createDots(from - 1);
+                else if (from > 5 && from < 8)
+                    createDots(4);
+                else
+                    return false;
             });
         if (action === 'hide' && !dotsItemContainer[2]) {
             if (from < 5)
                 createDots(from - 1);
+            else if (from > 5 && from < 8)
+                createDots(4);
         }
         dotsItemContainer.forEach(item => {
             if (action === 'show')
@@ -349,6 +387,11 @@ const popupDots = (() => {
     };
 
     const createDots = activeNum => {
+        if (from===6)
+            activeNum = 4;
+        if (from===8)
+            activeNum = 5;
+        console.log(activeNum);
         getPosition[activeNum].forEach(item => {
             dotsContainer.appendChild(dotElemCreate(item));
         });
@@ -357,6 +400,10 @@ const popupDots = (() => {
         createDots: activeNum => {
             if (from < 5)
                 createDots(activeNum - 1);
+            else if (from > 5)
+                createDots(8);
+            if (from > 5)
+                createDots(6);
         },
         showDots: () => {
             toggleCycle('show');
@@ -385,9 +432,7 @@ const popupDotsAnimate = (() => {
         }
     }
 
-    const listenerHover = ((item) => {
-
-    });
+    // Изменение размера навигационных кругов в зависимости от позиции курсора
     if (isPc)
         document.addEventListener('mousemove', e => {
             if (!disabledEvents && eventers.length > 0) {
@@ -414,7 +459,6 @@ const popupDotsAnimate = (() => {
             setTimeout(() => {
                 eventers.push(new Elem(event));
             }, 3);
-            listenerHover(event);
         }
     }
 })();
@@ -424,6 +468,7 @@ if(isPc)
 
 document.addEventListener('click', (e) => {
     let event = e.target;
+    // закрытие popup
     if (event.closest('.popup__bg')||e.target.closest('.popup-content__mob-closed')) {
         popupWindows.hide();
     }

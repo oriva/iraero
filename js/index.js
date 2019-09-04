@@ -8,11 +8,11 @@ let req = [];
 disabledEvents = true;
 
 if (window.innerWidth < 1980) {
-    ['video/4k/tr1.mp4', 'video/4k/tr2.mp4', 'video/4k/tr3.mp4', 'video/4k/tr4.mp4', 'img/4k/1.jpg', 'img/4k/2.jpg', 'img/4k/3.jpg', 'img/4k/4.jpg', 'img/4k/5.jpg', 'img/popup/1.jpg', 'img/popup/2.jpg'].forEach((item)=>{
+    ['video/4k/tr1.mp4', 'video/4k/tr2.mp4', 'video/4k/tr3.mp4', 'video/4k/tr4.mp4', 'video/4k/tr3(old).mp4', 'video/4k/tr4(old).mp4', 'img/4k/1.jpg', 'img/4k/2.jpg', 'img/4k/3.jpg', 'img/4k/4.jpg', 'img/4k/5.jpg', 'img/popup/1.jpg', 'img/popup/2.jpg'].forEach((item)=>{
         loadFunction(item);
     });
 } else {
-    ['video/fullHD/tr1.mp4', 'video/fullHD/tr2.mp4', 'video/fullHD/tr3.mp4', 'video/fullHD/tr4.mp4', 'img/fullHD/1.jpg', 'img/fullHD/2.jpg', 'img/fullHD/3.jpg', 'img/fullHD/4.jpg', 'img/fullHD/5.jpg', 'img/popup/1.jpg', 'img/popup/2.jpg'].forEach((item)=>{
+    ['video/fullHD/tr1.mp4', 'video/fullHD/tr2.mp4', 'video/fullHD/tr3.mp4', 'video/fullHD/tr3(old).mp4', 'video/fullHD/tr4(old).mp4', 'video/fullHD/tr4.mp4', 'img/fullHD/1.jpg', 'img/fullHD/2.jpg', 'img/fullHD/3.jpg', 'img/fullHD/4.jpg', 'img/fullHD/5.jpg', 'img/popup/1.jpg', 'img/popup/2.jpg'].forEach((item)=>{
         loadFunction(item);
     });
 }
@@ -23,6 +23,7 @@ document.querySelector('.panorama').addEventListener('transitionend', () => {
 });
 
 videoBlock.addEventListener('ended', () => {
+    console.log('Видео закончилось');
     videoBlock.currentTime = videoBlock.duration;
     listenerVideoPlay(forListenerVideo);
 });
@@ -90,6 +91,18 @@ const getLink = (type, number) => {
             case 5:
                 link = '5.jpg';
                 break;
+            case 6:
+                link = '4(old).jpg';
+                break;
+            case 7:
+                link = '4(old).jpg';
+                break;
+            case 8:
+                link = '5.jpg';
+                break;
+            case 9:
+                link = '4.jpg';
+                break;
         }
     } else {
         switch (number) {
@@ -107,6 +120,18 @@ const getLink = (type, number) => {
                 break;
             case 5:
                 link = 'tr1.mp4';
+                break;
+            case 6:
+                link = 'tr3-1.mp4';
+                break;
+            case 7:
+                link = 'tr4(old).mp4';
+                break;
+            case 8:
+                link = 'tr3-2.mp4';
+                break;
+            case 9:
+                link = 'tr3-2.mp4';
                 break;
         }
     }
@@ -141,7 +166,6 @@ const makeImg = (() => {
 })();
 
 const makeVideo = (() => {
-    const source = [videoBlock.querySelectorAll('source')[0], videoBlock.querySelectorAll('source')[1]];
     return {
         play: () => {
             setTimeout(() => {
@@ -150,12 +174,33 @@ const makeVideo = (() => {
             disabledEvents = false;
         },
         change: number => {
-            // source[0].src = 'video/fullHD/' + getLink('video', parseInt(number));
-            // source[1].src = 'video/4k/' + getLink('video', parseInt(number));
+            let path = '';
             if (window.innerWidth < 1980) {
-                videoBlock.src = 'video/fullHD/' + getLink('video', parseInt(number));
+                path = 'video/fullHD/';
             } else {
-                videoBlock.src = 'video/4k/' + getLink('video', parseInt(number));
+                path = 'video/4k/';
+            }
+            const whenLoad = () => {
+                if (from===5)
+                    return false;
+                from = 5;
+            };
+            if (number===9) {
+                videoBlock.src = path + getLink('video', 9);
+                setTimeout(()=> {
+                    videoBlock.addEventListener('loadedmetadata', ()=>{
+                        from = 4;
+                        changeDots(8);
+                    });
+                },1);
+            }
+            if (number===7 || number===8) {
+                videoBlock.src = path + getLink('video', number);
+                setTimeout(()=> {
+                    videoBlock.addEventListener('loadedmetadata', whenLoad());
+                },1);
+            } else {
+                videoBlock.src = path + getLink('video', parseInt(number));
             }
         }
     }
@@ -183,6 +228,7 @@ const dots = (() => {
     }
 })();
 
+//Функция отвечающая за затемнение
 const panorama = (() => {
     const pano = document.querySelector('.panorama');
     let listenImageChange = false;
@@ -208,9 +254,6 @@ const panorama = (() => {
     })();
     return {
         monitoring: () => {
-            console.log('Мы в мониторинге');
-            console.log(!pano.classList.contains('hide'));
-            console.log(!disabledEvents);
             if (!disabledEvents) {
                 return false;
             }
@@ -239,6 +282,8 @@ const panorama = (() => {
     }
 })();
 
+
+// функция отвечающая за блок с текстов в левом нижнем углу
 const text = (() => {
     const textArea = [document.querySelector('.footer__content .fn-tb__little'), document.querySelector('.footer__content .fn-tb__big')];
     const textInfo = [
@@ -258,6 +303,9 @@ const text = (() => {
 
 // Отличается ли кликнутая кнопка от активной?
 const canChange = to => {
+    if (from===7 || from===8) {
+        return 1;
+    }
     if (to !== from) {
         if (to - from === 1) {
             return 1;
@@ -284,30 +332,51 @@ const startAnimation = to => {
 // меняем навигационные точки
 const changeDots = target => {
     disabledEvents = true;
-    document.querySelector('.footer-dots .active').classList.remove('active');
-    target.classList.add('active');
-    dots.visibleToggle();
-    goVideo(target);
-    from = parseInt(target.dataset.to);
-
-    if (from === 4) {
+    if (target===6) {
+        dots.visibleToggle();
+        goVideo(target);
+    } else if (target===8) {
+        isSalon = false;
+        from = 8;
+        forListenerVideo = from;
+        let prevDot = document.querySelector('.footer-dots .active');
+        let nextDot = prevDot.parentNode.nextElementSibling.querySelector('a');
+        prevDot.classList.remove('active');
+        nextDot.classList.add('active');
+        dots.visibleToggle();
+        goVideo(8);
+    } else if (target===9) {
+        isSalon = false;
+        from = 4;
+        dots.visibleToggle();
         setTimeout(()=>{
-            document.body.classList.add('tour-party');
-        }, 200);
+            goVideo(target);
+        });
     } else {
-        setTimeout(()=>{
-            document.body.classList.remove('tour-party');
-        }, 200);
+        document.querySelector('.footer-dots .active').classList.remove('active');
+        target.classList.add('active');
+        dots.visibleToggle();
+        goVideo(target);
+        from = parseInt(target.dataset.to);
     }
     popupDots.hideDots();
 };
 
 
 const videoSrcChange = clickBut => {
-    makeVideo.change(clickBut.dataset.to);
+    if (from < 6)
+        makeVideo.change(clickBut.dataset.to);
+    else
+        makeVideo.change(clickBut);
 };
 
 const listenerVideoPlay = clickBut => {
+    if (forListenerVideo===6) {
+        from = 7;
+        clickBut = from;
+    }
+
+    console.log('listenerVideoPlay');
     makeImg.show();
     if (document.querySelector('.footer-dots .active').dataset.id !== '1') {
         document.querySelector('.footer').classList.add('not-first');
@@ -325,28 +394,48 @@ const listenerVideoPlay = clickBut => {
 };
 
 const goVideo = clickBut => {
-    if (canChange(parseInt(clickBut.dataset.to)) === 1) {
+    let dataClick = 0;
+    if (clickBut===6 || clickBut===7 || clickBut===8 || clickBut===9)
+        dataClick = clickBut;
+    else
+        dataClick = parseInt(clickBut.dataset.to);
+
+    if (dataClick===9) {
+        dataClick = 4;
+    }
+
+    if (canChange(dataClick) === 1 || isSalon) {
         makeImg.hide();
         setTimeout(() => {
-            makeImg.change(clickBut.dataset.to);
+            makeImg.change(dataClick);
         }, 200);
         setTimeout(() => {
             videoBlock.play();
-            text.change(parseInt(clickBut.dataset.to));
+            if (!isSalon&&from===6)
+                text.change(dataClick);
+            else if (clickBut===8) {
+                isSalon = false;
+                text.change(5);
+            } else {
+                text.change(parseInt(clickBut.dataset.to));
+            }
         }, 700);
-        forListenerVideo = clickBut;
+        if (clickBut!==8)
+            forListenerVideo = clickBut;
+    } else if (dataClick===9) {
+        panorama.show(4);
     } else {
-        toForListener = clickBut.dataset.to;
-        panorama.show(clickBut.dataset.to || toForListener);
+        toForListener = dataClick;
+        panorama.show(dataClick || toForListener);
     }
 };
 
 
-//scroll
+// функция определяющая куда идет скролл
 const onWheel = (e => {
     e = e || window.event;
     let delta = e.deltaY || e.detail || e.wheelDelta;
-    if (!disabledEvents && document.querySelector('.popup').classList.contains('hide')) {
+    if (!disabledEvents && document.querySelector('.popup').classList.contains('hide') && !isSalon) {
         let batya = document.querySelector('.footer-dots .active').parentNode;
         if (delta < 0) {
             if (batya.previousElementSibling)
@@ -356,9 +445,16 @@ const onWheel = (e => {
                 changeDots(batya.nextElementSibling.querySelector('a'));
         }
     }
+    if (!disabledEvents && isSalon) {
+        if (delta < 0) {
+            changeDots(9);
+        } else if (delta > 0) {
+            changeDots(8);
+        }
+    }
 });
 
-
+// проверка совместимости для скролла
 let elem = document;
 if (elem.addEventListener) {
     if ('onwheel' in document) {
