@@ -5,6 +5,7 @@
 let forListenerVideo = '';
 let videoCounterForLoad = 0;
 let req = [];
+let dotsClick = false;
 disabledEvents = true;
 
 if (window.innerWidth < 1980) {
@@ -31,6 +32,8 @@ videoBlock.addEventListener('ended', () => {
 document.addEventListener('click', e => {
     if (!disabledEvents) {
         if (e.target.closest('.footer-dots a')) {
+            if (isSalon)
+                dotsClick = true;
             startChange(e.target.closest('.footer-dots a'));
         }
     }
@@ -303,6 +306,18 @@ const text = (() => {
 
 // Отличается ли кликнутая кнопка от активной?
 const canChange = to => {
+    if (dotsClick && isSalon) {
+        if (from===5) {
+            if (to===5)
+                return 2;
+            else if (to===3)
+                return 1;
+            else
+                return 0;
+        } else {
+            return 0;
+        }
+    }
     if (from===7 || from===8) {
         return 1;
     }
@@ -319,6 +334,7 @@ const canChange = to => {
 
 //Начало, проверяем куда нажали
 const startChange = (clickBut) => {
+    console.log(canChange(parseInt(clickBut.dataset.to)));
     if (canChange(parseInt(clickBut.dataset.to))) {
         startAnimation(clickBut);
     }
@@ -353,6 +369,7 @@ const changeDots = target => {
             goVideo(target);
         });
     } else {
+        console.log(target);
         document.querySelector('.footer-dots .active').classList.remove('active');
         target.classList.add('active');
         dots.visibleToggle();
@@ -403,14 +420,15 @@ const goVideo = clickBut => {
     if (dataClick===9) {
         dataClick = 4;
     }
-
-    if (canChange(dataClick) === 1 || isSalon) {
+    console.log(isSalon&&!dotsClick);
+    if (canChange(dataClick) === 1 || (isSalon&&!dotsClick)) {
         makeImg.hide();
         setTimeout(() => {
             makeImg.change(dataClick);
         }, 200);
         setTimeout(() => {
             videoBlock.play();
+            dotsClick = false;
             if (!isSalon&&from===6)
                 text.change(dataClick);
             else if (clickBut===8) {
@@ -418,6 +436,7 @@ const goVideo = clickBut => {
                 text.change(5);
             } else {
                 text.change(parseInt(clickBut.dataset.to));
+                isSalon = false;
             }
         }, 700);
         if (clickBut!==8)

@@ -114,7 +114,8 @@ const popupContent = (number) => {
                 '<br><br><strong>Система спутниковой навигации GPS состоит из многорежимного приёмника («Thales Avionics», Франция) и антенны GPS (Chelton, США).</strong><br>Система спутниковой навигации GPS включается при подаче питания на борт. <br>' +
                 '<br><br><strong>Система измерения радиовысоты на SSJ 100 («Thales Avionics», Франция)</strong> состоит из двух комплектов, которые работают для выдачи данных для левого и правого пилотов. Система измерения радиовысоты включается при подаче питания на борт и не может быть выключена из кабины экипажа.<br>Радиовысотомер предназначен для точного измерения радиовысоты самолета до земли. Он является разновидностью радара, т.е. использует эффект распространения электромагнитных волн в воздухе с постоянной скоростью.<br>' +
                 '</p>' +
-                '</div>';
+                '</div>' +
+                '<img src="img/popup/avionics/last.jpg" alt="" class="popup-content__img-100">';
             break;
         case 8:
             content = '<div class="popup-content__mob">' +
@@ -142,7 +143,8 @@ const popupContent = (number) => {
                 '<div class="popup-content__padding-v">' +
                 '<span class="popup-content__title">Технические характеристики</span>' +
                 '<p><img src="img/popup/specifications/2.jpg" alt="" class="popup-content__img-100"></p>' +
-                '</div>';
+                '</div>' +
+                '<img src="img/popup/specifications/last.jpg" alt="" class="popup-content__img-100">';
             break;
         case 11:
             content = '<div class="popup-content__mob">' +
@@ -174,7 +176,11 @@ const popupContent = (number) => {
                 '</div>';
             break;
     }
-    content = '<div class="popup-content">' + content + '</div>';
+    if(number===7 || number===9) {
+        content = '<div class="popup-content popup-content_no-padding">' + content + '</div>';
+    } else {
+        content = '<div class="popup-content">' + content + '</div>';
+    }
     return content;
 };
 
