@@ -286,7 +286,6 @@ const popupWindows = (() => {
 
     const inSalon = (number) => {
         const whenLoaded = ()=>{
-            console.log('imInHere');
             if (!isSalon)
                 return false;
             if (from!==6)
@@ -397,7 +396,6 @@ const popupDots = (() => {
             activeNum = 4;
         if (from===8)
             activeNum = 5;
-        console.log(activeNum);
         getPosition[activeNum].forEach(item => {
             dotsContainer.appendChild(dotElemCreate(item));
         });

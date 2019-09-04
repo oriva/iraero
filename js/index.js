@@ -24,19 +24,8 @@ document.querySelector('.panorama').addEventListener('transitionend', () => {
 });
 
 videoBlock.addEventListener('ended', () => {
-    console.log('Видео закончилось');
     videoBlock.currentTime = videoBlock.duration;
     listenerVideoPlay(forListenerVideo);
-});
-
-document.addEventListener('click', e => {
-    if (!disabledEvents) {
-        if (e.target.closest('.footer-dots a')) {
-            if (isSalon)
-                dotsClick = true;
-            startChange(e.target.closest('.footer-dots a'));
-        }
-    }
 });
 
 document.addEventListener('keydown', e=>{
@@ -236,7 +225,6 @@ const panorama = (() => {
     const pano = document.querySelector('.panorama');
     let listenImageChange = false;
     const showAnimation = number => {
-        console.log(number);
         makeVideo.change(parseInt(number));
         makeImg.change(parseInt(number));
         text.change(parseInt(number));
@@ -309,9 +297,9 @@ const canChange = to => {
     if (dotsClick && isSalon) {
         if (from===5) {
             if (to===5)
-                return 2;
-            else if (to===3)
                 return 1;
+            else if (to===3)
+                return 2;
             else
                 return 0;
         } else {
@@ -334,15 +322,9 @@ const canChange = to => {
 
 //Начало, проверяем куда нажали
 const startChange = (clickBut) => {
-    console.log(canChange(parseInt(clickBut.dataset.to)));
     if (canChange(parseInt(clickBut.dataset.to))) {
-        startAnimation(clickBut);
+        changeDots(clickBut);
     }
-};
-
-// Дисейблим возможность эвентов, меняем дотс
-const startAnimation = to => {
-    changeDots(to);
 };
 
 // меняем навигационные точки
@@ -369,7 +351,6 @@ const changeDots = target => {
             goVideo(target);
         });
     } else {
-        console.log(target);
         document.querySelector('.footer-dots .active').classList.remove('active');
         target.classList.add('active');
         dots.visibleToggle();
@@ -392,8 +373,6 @@ const listenerVideoPlay = clickBut => {
         from = 7;
         clickBut = from;
     }
-
-    console.log('listenerVideoPlay');
     makeImg.show();
     if (document.querySelector('.footer-dots .active').dataset.id !== '1') {
         document.querySelector('.footer').classList.add('not-first');
@@ -420,8 +399,12 @@ const goVideo = clickBut => {
     if (dataClick===9) {
         dataClick = 4;
     }
-    console.log(isSalon&&!dotsClick);
-    if (canChange(dataClick) === 1 || (isSalon&&!dotsClick)) {
+
+    if(isSalon && dataClick===3)
+        isSalon = false;
+
+
+    if (canChange(dataClick) === 1 || isSalon) {
         makeImg.hide();
         setTimeout(() => {
             makeImg.change(dataClick);
@@ -449,6 +432,17 @@ const goVideo = clickBut => {
     }
 };
 
+
+// функция определяющая клик по навигнационным точкам
+document.addEventListener('click', e => {
+    if (!disabledEvents) {
+        if (e.target.closest('.footer-dots a')) {
+            if (isSalon)
+                dotsClick = true;
+            startChange(e.target.closest('.footer-dots a'));
+        }
+    }
+});
 
 // функция определяющая куда идет скролл
 const onWheel = (e => {
