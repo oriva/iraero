@@ -175,6 +175,18 @@ const popupContent = (number) => {
                 '<img src="img/popup/tour/pre1.jpg" alt="" class="popup-content__img-100">' +
                 '</div>';
             break;
+        case 13:
+            content = '<div class="popup-content__mob">' +
+                '<img src="img/iraero-logo_blue.png" alt="">' +
+                '<div class="popup-content__mob-closed"></div>' +
+                '</div>';
+            break;
+        case 14:
+            content = '<div class="popup-content__mob">' +
+                '<img src="img/iraero-logo_blue.png" alt="">' +
+                '<div class="popup-content__mob-closed"></div>' +
+                '</div>';
+            break;
     }
     if(number===7 || number===9) {
         content = '<div class="popup-content popup-content_no-padding">' + content + '</div>';
@@ -283,6 +295,10 @@ const popupWindows = (() => {
             popup.classList.add('hide');
         }
     };
+    const inSalonMob = ()=>{
+        console.log('Тута');
+    };
+
 
     const inSalon = (number) => {
         const whenLoaded = ()=>{
@@ -320,7 +336,10 @@ const popupWindows = (() => {
                     createTour();
                     break;
                 case 15:
-                    inSalon(6);
+                    if(isPc)
+                        inSalon(6);
+                    else
+                        inSalonMob();
                     break;
                 default:
                     createPopup(num);
@@ -333,7 +352,7 @@ const popupWindows = (() => {
 const popupDots = (() => {
     const dotsContainer = document.querySelector('.dots__container');
     // getPosition left,top(%), dataId
-    const getPosition = [[[41, 43, 1], [72, 43, 2], [44, 71, 3]], [[57, 49, 4], [72, 58, 5], [88, 48, 6]], [[48, 22, 7], [53, 53, 8], [82, 18, 9]], [[50, 58, 15], [94, 48, 14], [26, 24, 13]], [[47, 69, 10], [63, 42, 11], [30, 42, 12]]];
+    const getPosition = [[[41, 43, 1], [72, 43, 2], [44, 71, 3]], [[57, 49, 4], [72, 58, 5], [88, 48, 6]], [[48, 22, 7], [53, 53, 8], [82, 18, 9]], [[70, 35, 15], [94, 48, 14], [26, 24, 13]], [[47, 69, 10], [63, 42, 11], [30, 42, 12]]];
     const dotElemCreate = leftTop => {
         let duru = document.createElement('div');
         duru.className = 'dots__item-container hide';

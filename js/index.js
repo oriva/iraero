@@ -3,8 +3,6 @@
 // let toForListener = 2;
 // let disabledEvents = false;
 let forListenerVideo = '';
-let videoCounterForLoad = 0;
-let req = [];
 let dotsClick = false;
 disabledEvents = true;
 
@@ -298,7 +296,7 @@ const canChange = to => {
         if (from===5) {
             if (to===5)
                 return 1;
-            else if (to===3)
+            else if (to<=3)
                 return 2;
             else
                 return 0;
@@ -400,10 +398,11 @@ const goVideo = clickBut => {
         dataClick = 4;
     }
 
-    if(isSalon && dataClick===3)
+    if(isSalon && dataClick<=3)
         isSalon = false;
 
-
+console.log(canChange(dataClick));
+console.log(isSalon);
     if (canChange(dataClick) === 1 || isSalon) {
         makeImg.hide();
         setTimeout(() => {

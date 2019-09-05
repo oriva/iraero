@@ -4,8 +4,12 @@ let from = 1;
 let toForListener = 2;
 const imageBlock = document.querySelectorAll('.main-content__img');
 const videoBlock = document.querySelector('.main-content__video');
+let req = [];
+let videoCounterForLoad = 0;
 
 loadFunction = (links)=>{
+    if (document.body.clientWidth <= 768)
+        return false;
     req[videoCounterForLoad] = new XMLHttpRequest();
     req[videoCounterForLoad].open('GET', links, true);
     req[videoCounterForLoad].responseType = 'blob';
