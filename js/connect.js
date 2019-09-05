@@ -1,13 +1,15 @@
 let disabledEvents = false;
 let isSalon = false;
 let from = 1;
+let req = [];
 let toForListener = 2;
 const imageBlock = document.querySelectorAll('.main-content__img');
 const videoBlock = document.querySelector('.main-content__video');
-let req = [];
 let videoCounterForLoad = 0;
 
 loadFunction = (links)=>{
+    if (typeof req==='undefined')
+        req = [];
     if (document.body.clientWidth <= 768)
         return false;
     req[videoCounterForLoad] = new XMLHttpRequest();
