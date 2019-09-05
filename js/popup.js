@@ -295,8 +295,12 @@ const popupWindows = (() => {
             popup.classList.add('hide');
         }
     };
-    const inSalonMob = ()=>{
-        console.log('Тута');
+    const inSalonMob = (action)=>{
+        let clickElem = document.querySelector('.dots__item-container[data-id="15"]');
+        if (action==='show')
+            clickElem.closest('.owl-mobile__block-content').classList.add('owl-mobile__block-content_in-salon');
+        else
+            clickElem.closest('.owl-mobile__block-content').classList.remove('owl-mobile__block-content_in-salon');
     };
 
 
@@ -339,7 +343,11 @@ const popupWindows = (() => {
                     if(isPc)
                         inSalon(6);
                     else
-                        inSalonMob();
+                        inSalonMob('show');
+                    break;
+                case 20:
+                    if(!isPc)
+                        inSalonMob('hide');
                     break;
                 default:
                     createPopup(num);
