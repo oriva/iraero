@@ -360,7 +360,7 @@ const popupWindows = (() => {
 const popupDots = (() => {
     const dotsContainer = document.querySelector('.dots__container');
     // getPosition left,top(%), dataId
-    const getPosition = [[[41, 43, 1], [72, 43, 2], [44, 71, 3]], [[57, 49, 4], [72, 58, 5], [88, 48, 6]], [[48, 22, 7], [53, 53, 8], [82, 18, 9]], [[70, 35, 15], [94, 48, 14], [26, 24, 13]], [[47, 69, 10], [63, 42, 11], [30, 42, 12]]];
+    const getPosition = [[[41, 43, 1], [72, 43, 2], [44, 71, 3]], [[57, 49, 4], [72, 58, 5], [88, 48, 6]], [[48, 22, 7], [53, 53, 8], [82, 18, 9]], [[70, 35, 15], [94, 48, 14], [26, 24, 13]], [[51, 69, 10], [67, 44, 11], [35, 44, 12]]];
     const dotElemCreate = leftTop => {
         let duru = document.createElement('div');
         duru.className = 'dots__item-container hide';
